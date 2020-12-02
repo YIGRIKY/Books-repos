@@ -1,0 +1,153 @@
+{% extends 'main/base.html.twig' %}
+{% block body %}
+
+    <h1>
+        {{ title }}
+    </h1>
+
+<style>
+    body{
+        background: #ececec;
+    }
+    img {
+        height: 175px;
+        max-width: 160px;
+    }
+    .content{
+        margin-top: 50px;
+    }
+    .product {
+        background: #fff none repeat scroll 0 0;
+        border: 1px solid #c0c0c0;
+        height: 230px;
+        overflow: visible;
+        padding: 5px 5px;
+        position: relative;
+        text-align: left;
+        transition: all 0.5s ease 0s;
+        margin-bottom: 20px;
+    }
+    .product:hover {
+        box-shadow: 0 0 16px rgba(0, 0, 0, 5.5);
+    }
+    .product-img {
+        height: 20px;
+        position: relative;
+        margin-right: 10px;
+    }
+    .product-title a {
+        color: #000;
+        font-weight: 1500;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    .product-desc {
+        max-height: 120px;
+        overflow: hidden;
+    }
+    .product-price {
+
+        left: 0;
+        position: relative;
+        width: 100%;
+        color: #d51e08;
+        font-size: 18px;
+        font-weight: 500;
+    }
+</style>
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group">
+                    <p class="list-group-item">Жанры:</p>
+                    <a href="#" class="list-group-item ml-4 bg-info text-white">    Классика</a>
+                    <a href="#" class="list-group-item ml-4 bg-info text-white">    Фэнтези</a>
+                    <a href="#" class="list-group-item ml-4 bg-info text-white">    История</a>
+                    <a href="#" class="list-group-item ml-4 bg-info text-white">    Драма</a>
+                    <a href="#" class="list-group-item ml-4 bg-info text-white">    Бизнес</a>
+                </div>
+
+                <div class="list-group">
+                    <p class="list-group-item">Автор:</p>
+                    <form class="form-inline">
+                        <div class="list-group-item ml-6 bg-white text-white">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Укажите Автора:">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Выбрать</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8 products">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="product">
+                            <div class="col ">
+                                <div class="product-img">
+                                    <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                </div>
+                            </div>
+                            <div class="col pl-2">
+                                <p class="product-title">
+                                    <a href="#">Война и Мир</a>
+                                </p>
+                                <p class="product-desc" style="text-indent: 20px">Война и мир" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
+                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
+                                <p class="product-price">Price: €10.00</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="product">
+                            <div class="col ">
+                                <div class="product-img">
+                                    <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                </div>
+                            </div>
+                            <div class="col pl-2">
+                                <p class="product-title">
+                                    <a href="#">Война и Мир</a>
+                                </p>
+                                <p class="product-desc " style="text-indent: 20px">Война и мир" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
+                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
+                                <p class="product-price">Price: €10.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="product">
+                            <div class="col ">
+                                <div class="product-img">
+                                    <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                </div>
+                            </div>
+                            <div class="col pl-2">
+                                <p class="product-title">
+                                    <a href="#">Война и Мир</a>
+                                </p>
+                                <p class="product-desc" style="text-indent: 20px">Война и мир" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
+                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
+                                <p class="product-price">Price: €10.00</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

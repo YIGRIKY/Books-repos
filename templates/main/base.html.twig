@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home page{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ path('home') }}">
+        <i class="fa fa-microchip" aria-hidden="true"></i>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto pl-5">
+            <li class="nav-item active pl-5 pr-5">
+                <a class="nav-link" href="{{ path('home') }}">Главная <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item active pl-5 pr-5 ">
+                <a class="nav-link" href="{{ path('home') }}">Жанры <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <form class="form-inline pl-3">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path('admin_home') }}" class="btn btn-outline-success my-2 my-sm-0" type="submit">Админочка</a>
+            {% else %}
+                <a href="{{ path('app_login') }}" class="btn btn-outline-success my-2 my-sm-0 " type="submit">Вход</a>
+            {% endif %}
+        </form>
+
+    </div>
+</nav>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/framework/vue/vue.js') }}"></script>
+    <script src="{{ asset('assets/framework/bootstrap-4.4.1/js/bootstrap.min.js') }}"></script>
+    {% block addJs %}{% endblock %}
+{% endblock %}
+</body>
+</html>

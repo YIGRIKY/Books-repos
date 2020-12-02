@@ -1,0 +1,41 @@
+{% extends 'admin/adminbase.html.twig' %}
+{% block body %}
+    <h1>
+        {{ title }}
+    </h1>
+    <style>
+        body{
+            background: #ececec;
+            animation: background 2s infinite alternate;
+        }
+        @keyframes background {
+            50% {
+                background: linear-gradient(white, black);
+                background-position: 0 100px;
+            }
+
+    </style>
+
+
+
+
+
+        <div class="row mt-4" style="padding-left: 778px;">
+            <div class="col-md-4">
+                <div class="list-group">
+                    <p class="list-group-item">Function:</p>
+                    <a href="{{ path('admin_user') }}" class="btn btn-primary stretched-link">User</a>
+                    <a href="{{ path('admin_user') }}" class="btn btn-primary stretched-link">Add Books</a>
+                    <a href="{{ path('admin_user') }}" class="btn btn-primary stretched-link">Create Manager</a>
+                    <a href="{{ path('admin_user') }}" class="btn btn-primary stretched-link">Add Author</a>
+                </div>
+            </div>
+        </div>
+
+
+        {{ title }}
+    </h1>
+    <a href="{{ path('app_logout') }}">Log out</a>
+    <a href="{{ path('admin_user') }}">User</a>
+
+{% endblock %}
