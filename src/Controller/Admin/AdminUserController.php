@@ -79,7 +79,7 @@ class AdminUserController extends AdminBaseController
     {
       echo  <<<_END
     <script>
-    allert("AAAAAAAAAAAAAAAAA");
+    alert("AAAAAAAAAAAAAAAAA");
 </script>
 _END;
 
