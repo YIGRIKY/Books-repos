@@ -13,6 +13,7 @@ use App\Entity\Books;
 use App\Entity\User;
 use App\Form\BooksType;
 use App\Form\UserType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -90,8 +91,8 @@ class AdminUserController extends AdminBaseController
 
             $books->setTitle($title);
             $books->setYear($year);
-            $books->setDescription($discrip);
             $books->setAuthor($author);
+            $books->setDescription($discrip);
             $em->persist($books);
             $em->flush();
 
@@ -99,8 +100,8 @@ class AdminUserController extends AdminBaseController
         }
 
         $forRender = parent::renderDefualt();
-        $forRender['title'] = 'Форма создания пользователя';
+        $forRender['title'] = 'Форма добавления книги';
         $forRender['form'] = $form->createView();
-        return $this->render('admin/user/form.html.twig', $forRender);
+        return $this->render('admin/book/form.html.twig', $forRender);
     }
 }

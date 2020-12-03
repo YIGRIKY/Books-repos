@@ -23,12 +23,12 @@ class BooksType extends AbstractType
             ->add('year', IntegerType::class, array(
                 'label' => 'Год написания'
             ))
-            ->add('description', TextareaType::class, array(
-                'label' => 'Краткое описание'
-            ))
             ->add('author', EntityType::class, array(
                     'label' => 'Авторы',
                     'class' => Author::class
+            ))
+            ->add('description', TextareaType::class, array(
+                'label' => 'Краткое описание'
             ))
         ;
     }
