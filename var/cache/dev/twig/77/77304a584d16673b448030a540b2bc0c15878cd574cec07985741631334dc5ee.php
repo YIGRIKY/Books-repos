@@ -312,6 +312,6 @@ class __TwigTemplate_26cfc6093deb6c230a57cf31f6c0d03e4b8de2676b429faee3e0a727294
     {% block addJs %}{% endblock %}
 {% endblock %}
 </body>
-</html>", "admin/adminbase.html.twig", "C:\\Books-repos-master1\\templates\\admin\\adminbase.html.twig");
+</html>", "admin/adminbase.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\admin\\adminbase.html.twig");
     }
 }

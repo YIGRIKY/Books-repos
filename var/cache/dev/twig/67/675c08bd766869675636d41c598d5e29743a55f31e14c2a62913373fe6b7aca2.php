@@ -125,17 +125,27 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
         font-weight: 500;
     }
 </style>
-    <div class=\"container content\">
+    <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-md-4\">
                 <div class=\"list-group\">
                     <p class=\"list-group-item\">Жанры:</p>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Классика</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Фэнтези</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    История</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Драма</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Бизнес</a>
-                </div>
+                    ";
+        // line 65
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 65, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 66
+            echo "                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 66), "html", null, true);
+            echo "</a>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 68
+        echo "                </div>
 
                 <div class=\"list-group\">
                     <p class=\"list-group-item\">Автор:</p>
@@ -149,68 +159,51 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
                 </div>
             </div>
             <div class=\"col-md-8 products\">
+                <ul>
+                    ";
+        // line 83
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["books"]) || array_key_exists("books", $context) ? $context["books"] : (function () { throw new RuntimeError('Variable "books" does not exist.', 83, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
+            // line 84
+            echo "                        <div class=\"row\">
+                            <div class=\"col-sm-12\">
+                                <div class=\"product\">
+                                    <div class=\"col \">
+                                        <div class=\"product-img\">
+                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                        </div>
+                                    </div>
+                                    <div class=\"col pl-2\">
 
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                        <p class=\"product-title\">
+                                            <a href=\"#\">";
+            // line 95
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 95), "html", null, true);
+            echo "</a>
+                                        </p>
+                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
+                                            ";
+            // line 98
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 98), "html", null, true);
+            echo "
+                                        <p class=\"product-title\">";
+            // line 99
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 99), "getAuthorName", [], "method", false, false, false, 99), "html", null, true);
+            echo "</p>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc\" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-
                         </div>
-                    </div>
-                </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 106
+        echo "                </ul>
 
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
-                                </div>
-                            </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc \" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
-                                </div>
-                            </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc\" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
 
         </div>
     </div>
@@ -239,7 +232,7 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
 
     public function getDebugInfo()
     {
-        return array (  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  205 => 106,  192 => 99,  188 => 98,  182 => 95,  169 => 84,  165 => 83,  148 => 68,  139 => 66,  135 => 65,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -303,16 +296,14 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
         font-weight: 500;
     }
 </style>
-    <div class=\"container content\">
+    <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-md-4\">
                 <div class=\"list-group\">
                     <p class=\"list-group-item\">Жанры:</p>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Классика</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Фэнтези</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    История</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Драма</a>
-                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">    Бизнес</a>
+                    {% for category in categories %}
+                    <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">{{ category.getCategoryName() }}</a>
+                    {% endfor %}
                 </div>
 
                 <div class=\"list-group\">
@@ -327,68 +318,32 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
                 </div>
             </div>
             <div class=\"col-md-8 products\">
+                <ul>
+                    {%  for book in books %}
+                        <div class=\"row\">
+                            <div class=\"col-sm-12\">
+                                <div class=\"product\">
+                                    <div class=\"col \">
+                                        <div class=\"product-img\">
+                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                        </div>
+                                    </div>
+                                    <div class=\"col pl-2\">
 
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                        <p class=\"product-title\">
+                                            <a href=\"#\">{{ book.title }}</a>
+                                        </p>
+                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
+                                            {{ book.description }}
+                                        <p class=\"product-title\">{{ book.author.getAuthorName() }}</p>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc\" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-
                         </div>
-                    </div>
-                </div>
+                    {% endfor %}
+                </ul>
 
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
-                                </div>
-                            </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc \" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=\"row\">
-                    <div class=\"col-sm-12\">
-                        <div class=\"product\">
-                            <div class=\"col \">
-                                <div class=\"product-img\">
-                                    <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
-                                </div>
-                            </div>
-                            <div class=\"col pl-2\">
-                                <p class=\"product-title\">
-                                    <a href=\"#\">Война и Мир</a>
-                                </p>
-                                <p class=\"product-desc\" style=\"text-indent: 20px\">Война и мир\" - вершина творчества Л. Н. Толстого, как никакое другое произведение писателя отражает глубину его мироощущения и философии.
-                                    Эта книга из разряда вечных, потому что она обо всем: о жизни и смерти, о любви и чести, о мужестве и героизме, о славе и подвиге, о войне и мире.</p>
-                                <p class=\"product-price\">Price: €10.00</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
 
         </div>
     </div>
@@ -396,6 +351,6 @@ class __TwigTemplate_5189e745d2b0da4f03c850e9b121376b6e434c1df16eea35ba9dd41e8a4
 
 
 
-{% endblock %}", "main/index.html.twig", "C:\\Books-repos-master1\\templates\\main\\index.html.twig");
+{% endblock %}", "main/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\index.html.twig");
     }
 }

@@ -36,7 +36,7 @@ class Books
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Author::class, inversedBy="books")
+     * @ORM\ManyToOne(targetEntity=Author::class, inversedBy="author_name")
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
@@ -92,6 +92,7 @@ class Books
     {
         return $this->author;
     }
+
 
     public function setAuthor(?Author $author): self
     {

@@ -1704,6 +1704,6 @@ class __TwigTemplate_299b40554c4c20274318021e4469b8920ee1c458e2fc13562aac75b99ba
     });
 
 /*]]>*/</script>
-", "@WebProfiler/Profiler/base_js.html.twig", "C:\\Books-repos-master1\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "C:\\Users\\egork\\Books-repos\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
     }
 }

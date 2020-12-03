@@ -21,13 +21,11 @@ class Author
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity=Books::class, mappedBy="author")
      */
     private $author_name;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Books::class, mappedBy="author")
-     */
-    private $books;
+
 
     public function __construct()
     {

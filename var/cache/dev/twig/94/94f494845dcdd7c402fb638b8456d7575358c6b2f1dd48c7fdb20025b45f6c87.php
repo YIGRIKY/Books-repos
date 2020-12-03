@@ -80,25 +80,30 @@ class __TwigTemplate_587dc650e2f110d75005e1f990ce6fc3430d8724e2e8de1934009ccfd08
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_books");
         echo "\">Create Books</a>
+    <a href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_category");
+        echo "\">Create Category</a>
     <h2>User Control: </h2>
 
    <ul>
        ";
-        // line 12
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 12, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 13
+            // line 14
             echo "       <li>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 13), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 14), "html", null, true);
             echo "</li>
        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
+        // line 16
         echo "   </ul>
+
 
 ";
         
@@ -121,7 +126,7 @@ class __TwigTemplate_587dc650e2f110d75005e1f990ce6fc3430d8724e2e8de1934009ccfd08
 
     public function getDebugInfo()
     {
-        return array (  101 => 15,  92 => 13,  88 => 12,  81 => 8,  77 => 7,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  105 => 16,  96 => 14,  92 => 13,  85 => 9,  81 => 8,  77 => 7,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -134,6 +139,7 @@ class __TwigTemplate_587dc650e2f110d75005e1f990ce6fc3430d8724e2e8de1934009ccfd08
 
     <a href=\"{{ path('admin_user_create') }}\">Create User</a>
     <a href=\"{{ path('admin_user_books') }}\">Create Books</a>
+    <a href=\"{{ path('admin_user_category') }}\">Create Category</a>
     <h2>User Control: </h2>
 
    <ul>
@@ -142,6 +148,7 @@ class __TwigTemplate_587dc650e2f110d75005e1f990ce6fc3430d8724e2e8de1934009ccfd08
        {% endfor %}
    </ul>
 
-{% endblock %}", "admin/user/index.html.twig", "C:\\Books-repos-master1\\templates\\admin\\user\\index.html.twig");
+
+{% endblock %}", "admin/user/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\admin\\user\\index.html.twig");
     }
 }

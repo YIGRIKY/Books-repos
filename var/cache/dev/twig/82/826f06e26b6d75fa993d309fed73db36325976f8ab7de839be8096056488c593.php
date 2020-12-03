@@ -482,6 +482,6 @@ class __TwigTemplate_032ce761989989c9129b20b0a753a2b29d8175ac428d67fcd6093a43f9b
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Books-repos-master1\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\egork\\Books-repos\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

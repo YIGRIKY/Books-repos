@@ -78,8 +78,7 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
         }
         @keyframes background {
             50% {
-                background: linear-gradient(white, black);
-                background-position: 0 100px;
+                background: linear-gradient(white, black) 0 100px;
             }
 
     </style>
@@ -93,19 +92,19 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
                 <div class=\"list-group\">
                     <p class=\"list-group-item\">Function:</p>
                     <a href=\"";
-        // line 27
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
         echo "\" class=\"btn btn-primary stretched-link\">User</a>
                     <a href=\"";
-        // line 28
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
         echo "\" class=\"btn btn-primary stretched-link\">Add Books</a>
                     <a href=\"";
-        // line 29
+        // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
         echo "\" class=\"btn btn-primary stretched-link\">Create Manager</a>
                     <a href=\"";
-        // line 30
+        // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
         echo "\" class=\"btn btn-primary stretched-link\">Add Author</a>
                 </div>
@@ -114,16 +113,16 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
 
 
         ";
-        // line 36
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 36, $this->source); })()), "html", null, true);
+        // line 35
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 35, $this->source); })()), "html", null, true);
         echo "
     </h1>
     <a href=\"";
-        // line 38
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Log out</a>
     <a href=\"";
-        // line 39
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
         echo "\">User</a>
 
@@ -148,7 +147,7 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
 
     public function getDebugInfo()
     {
-        return array (  127 => 39,  123 => 38,  118 => 36,  109 => 30,  105 => 29,  101 => 28,  97 => 27,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  126 => 38,  122 => 37,  117 => 35,  108 => 29,  104 => 28,  100 => 27,  96 => 26,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -165,8 +164,7 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
         }
         @keyframes background {
             50% {
-                background: linear-gradient(white, black);
-                background-position: 0 100px;
+                background: linear-gradient(white, black) 0 100px;
             }
 
     </style>
@@ -193,6 +191,6 @@ class __TwigTemplate_cbff766daee985eb05149e7f741e8f54e9e66e41f119492a498848d8923
     <a href=\"{{ path('app_logout') }}\">Log out</a>
     <a href=\"{{ path('admin_user') }}\">User</a>
 
-{% endblock %}", "admin/index.html.twig", "C:\\Books-repos-master1\\templates\\admin\\index.html.twig");
+{% endblock %}", "admin/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\admin\\index.html.twig");
     }
 }

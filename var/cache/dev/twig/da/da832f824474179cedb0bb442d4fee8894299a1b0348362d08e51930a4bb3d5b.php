@@ -204,6 +204,6 @@ class __TwigTemplate_f3e888683da99d35abf8e4eb36b1a7103f635732fcdc4bbe222dace45f7
     </button>
 </form>
 {% endblock %}
-", "security/login.html.twig", "C:\\Books-repos-master1\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\security\\login.html.twig");
     }
 }

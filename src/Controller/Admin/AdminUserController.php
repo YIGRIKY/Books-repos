@@ -10,8 +10,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Books;
+use App\Entity\Category;
 use App\Entity\User;
 use App\Form\BooksType;
+use App\Form\CategoryType;
 use App\Form\UserType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -89,10 +91,10 @@ class AdminUserController extends AdminBaseController
 //            $discrip = $books->getDescription();
 
 
-            $books->setTitle($form->get('title')->getData());
-            $books->setYear($form->get('year')->getData());
-            $books->setAuthor($form->get('author')->getData());
-            $books->setDescription($form->get('description')->getData());
+//            $books->setTitle($form->get('title')->getData());
+//            $books->setYear($form->get('year')->getData());
+//            $books->setAuthor($form->get('author')->getData());
+//            $books->setDescription($form->get('description')->getData());
             $em->persist($books);
             $em->flush();
 
@@ -102,6 +104,31 @@ class AdminUserController extends AdminBaseController
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Форма добавления книги';
         $forRender['form'] = $form->createView();
-        return $this->render('admin/book/form.html.twig', $forRender);
+        return $this->render('admin/user/form.html.twig', $forRender);
+    }
+
+    /**
+     * @Route ("/admin/user/category", name="admin_user_category")
+     * @param Request $request
+     * @return RedirectResponse|Response
+     */
+    public function createCategory(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+
+        if(($form->isSubmitted()) && ($form->isValid()))
+        {
+            $em->persist($category);
+            $em->flush();
+            return $this->redirectToRoute('admin_user');
+        }
+
+        $forRender = parent::renderDefualt();
+        $forRender['title'] = 'Форма создания категории';
+        $forRender['form'] = $form->createView();
+        return $this->render('admin/user/form.html.twig', $forRender);
     }
 }
