@@ -6,6 +6,7 @@ use App\Entity\Author;
 use App\Entity\Books;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,15 +21,15 @@ class BooksType extends AbstractType
             ->add('title', TextType::class, array(
                 'label' => 'Название'
             ))
-            ->add('year', IntegerType::class, array(
+            ->add('year', DateTimeType::class, array(
                 'label' => 'Год написания'
-            ))
-            ->add('author', EntityType::class, array(
-                    'label' => 'Авторы',
-                    'class' => Author::class
             ))
             ->add('description', TextareaType::class, array(
                 'label' => 'Краткое описание'
+            ))
+            ->add('author', EntityType::class, array(
+                'label' => 'Авторы',
+                'class' => Author::class
             ))
         ;
     }

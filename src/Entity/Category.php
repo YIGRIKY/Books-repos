@@ -15,6 +15,7 @@ class Category
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
+     * @ORM\OneToMany(targetEntity=CategoriesAndBooks::class, mappedBy="categoryId")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -24,10 +25,6 @@ class Category
      */
     private $category_name;
 
-    /**
-     * @ORM\OneToMany(targetEntity=CategoriesAndBooks::class, mappedBy="categoryId")
-     */
-    private $category;
 
     public function __construct()
     {

@@ -18,13 +18,13 @@ class CategoriesAndBooks
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="category")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="id")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categoryId;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Books::class, inversedBy="books")
+     * @ORM\ManyToOne(targetEntity=Books::class, inversedBy="id")
      */
     private $bookId;
 

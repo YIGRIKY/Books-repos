@@ -12,7 +12,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 'App\\Entity\\Category',
             ],
             'inversedBy' => [
-                'category',
+                'id',
             ],
             'nullable' => [
                 1 => false,
