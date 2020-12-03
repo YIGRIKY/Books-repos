@@ -44,7 +44,7 @@ class AdminUserController extends AdminBaseController
 
 
 
-    public function create(\Symfony\Component\HttpFoundation\Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function create(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -76,23 +76,24 @@ class AdminUserController extends AdminBaseController
      * @return RedirectResponse|Response
      */
 
-    public function createBooks(\Symfony\Component\HttpFoundation\Request $request)
+    public function createBooks(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $books = new Books();
         $form = $this->createForm(BooksType::class, $books);
-        $em = $this->getDoctrine()->getManager();
         $form->handleRequest($request);
 
         if (($form->isSubmitted()) && ($form->isValid())) {
-            $title = $books->getTitle();
-            $year = $books->getYear();
-            $author = $books->getAuthor();
-            $discrip = $books->getDescription();
+//            $title = $books->getTitle();
+//            $year = $books->getYear();
+//            $author = $books->getAuthor();
+//            $discrip = $books->getDescription();
 
-            $books->setTitle($title);
-            $books->setYear($year);
-            $books->setAuthor($author);
-            $books->setDescription($discrip);
+
+            $books->setTitle($form->get('title')->getData());
+            $books->setYear($form->get('year')->getData());
+            $books->setAuthor($form->get('author')->getData());
+            $books->setDescription($form->get('description')->getData());
             $em->persist($books);
             $em->flush();
 

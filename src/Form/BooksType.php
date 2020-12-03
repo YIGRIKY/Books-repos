@@ -17,7 +17,7 @@ class BooksType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Title', TextType::class, array(
+            ->add('title', TextType::class, array(
                 'label' => 'Название'
             ))
             ->add('year', IntegerType::class, array(
