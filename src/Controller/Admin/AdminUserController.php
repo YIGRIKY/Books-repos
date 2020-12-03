@@ -72,12 +72,17 @@ class AdminUserController extends AdminBaseController
     /**
      * @Route ("/admin/user/books", name="admin_user_books")
      * @param Request $request
-     *
      * @return RedirectResponse|Response
      */
 
     public function createBooks(Request $request)
     {
+      echo  <<<_END
+    <script>
+    allert("AAAAAAAAAAAAAAAAA");
+</script>
+_END;
+
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Форма добавления книги';
         //$forRender['form'] = $form->createView();
