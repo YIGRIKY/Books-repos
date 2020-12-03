@@ -58,7 +58,7 @@ class AdminUserController extends AdminBaseController
             $user->setRoles(["ROLE_MANAGER"]);
             $em->persist($user);
             $em->flush();
-
+            $form->remove();
             return $this->redirectToRoute('admin_user');
         }
 
