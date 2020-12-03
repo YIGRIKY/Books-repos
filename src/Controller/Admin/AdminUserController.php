@@ -77,17 +77,6 @@ class AdminUserController extends AdminBaseController
 
     public function createBooks(Request $request)
     {
-      echo  <<<_END
-    <script>
-    alert("AAAAAAAAAAAAAAAAA");
-</script>
-_END;
-
-        $forRender = parent::renderDefualt();
-        $forRender['title'] = 'Форма добавления книги';
-        //$forRender['form'] = $form->createView();
-        return $this->render('admin/book/form.html.twig', $forRender);
-
         $em = $this->getDoctrine()->getManager();
         $books = new Books();
         $form = $this->createForm(BooksType::class, $books);
@@ -113,6 +102,11 @@ _END;
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Форма добавления книги';
         $forRender['form'] = $form->createView();
+        echo  <<<_END
+    <script>
+    alert("AAAAAAAAAAAAAAAAA");
+</script>
+_END;
         return $this->render('admin/book/form.html.twig', $forRender);
     }
 }
