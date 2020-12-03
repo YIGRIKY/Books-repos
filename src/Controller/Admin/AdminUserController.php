@@ -101,13 +101,7 @@ class AdminUserController extends AdminBaseController
 
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Форма добавления книги';
-        echo  <<<_END
-    <script>
-    alert("AAAAAAAAAAAAAAAAA");
-</script>
-_END;
-        $forRender['form'] = $form->createView();
-
+        $forRender['form'] = $form->createView(BooksType::class);
         return $this->render('admin/book/form.html.twig', $forRender);
     }
 }
