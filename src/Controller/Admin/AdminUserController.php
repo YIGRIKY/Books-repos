@@ -10,6 +10,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Books;
+use App\Entity\CategoriesAndBooks;
 use App\Entity\Category;
 use App\Entity\User;
 use App\Form\BooksType;
@@ -76,19 +77,23 @@ class AdminUserController extends AdminBaseController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-
     public function createBooks(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $books = new Books();
+        $categoryAndBooks = new CategoriesAndBooks();
         $form = $this->createForm(BooksType::class, $books);
         $form->handleRequest($request);
 
         if (($form->isSubmitted()) && ($form->isValid())) {
 
+
             $em->persist($books);
             $em->flush();
-
+            $categoryAndBooks->setBookId($books);
+            $categoryAndBooks->setCategoryId($form->get('category')->getData());
+            $em->persist($categoryAndBooks);
+            $em->flush();
             return $this->redirectToRoute('admin_user');
         }
 

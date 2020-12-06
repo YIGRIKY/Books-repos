@@ -5,17 +5,22 @@ namespace App\Controller\Main;
 
 
 use App\Entity\Books;
+use App\Entity\CategoriesAndBooks;
 use App\Entity\Category;
 use http\Env\Request;
 use Knp\Component\Pager\Paginator;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends BaseController
 {
     /**
      * @Route("/", name="home")
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
      */
-    public function index(\Symfony\Component\HttpFoundation\Request $request, PaginatorInterface $paginator)
+    public function index(\Symfony\Component\HttpFoundation\Request $request, PaginatorInterface $paginator): Response
     {
 
         $books = $this->getDoctrine()->getRepository(Books::class)->findAll();
@@ -57,9 +62,10 @@ class HomeController extends BaseController
 
         );
 
-
+        $categoryAndBooks = $this->getDoctrine()->getRepository(CategoriesAndBooks::class)->findAll();
         $forRender = parent:: renderDefualt();
         $forRender['books'] = $books;
+        $forRender['categoryAndBooks'] = $categoryAndBooks;
         $forRender['categories'] = $category;
         $forRender['check'] = 3;
         $forRender['appointments'] = $appointments;

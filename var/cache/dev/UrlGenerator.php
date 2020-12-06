@@ -21,6 +21,9 @@ return [
     'admin_user_books' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::createBooks'], [], [['text', '/admin/user/books']], [], []],
     'admin_user_category' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::createCategory'], [], [['text', '/admin/user/category']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\Main\\HomeController::index'], [], [['text', '/']], [], []],
+    'manager_books' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createBooks'], [], [['text', '/manager/books']], [], []],
+    'manager_category' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createCategory'], [], [['text', '/manager/category']], [], []],
+    'manager_home' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerHomeController::index'], [], [['text', '/manager']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

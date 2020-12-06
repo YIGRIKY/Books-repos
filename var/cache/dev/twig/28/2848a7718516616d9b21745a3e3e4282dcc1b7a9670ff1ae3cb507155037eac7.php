@@ -91,28 +91,40 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
         // line 32
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 33
-            echo "                <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_home");
-            echo "\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Админочка</a>
-            ";
+            echo "                ";
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 34
+                echo "                    <a href=\"";
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_home");
+                echo "\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Админочка</a>
+                ";
+            } else {
+                // line 36
+                echo "                    <a href=\"";
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("manager_home");
+                echo "\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Менеджер</a>
+                ";
+            }
+            // line 38
+            echo "            ";
         } else {
-            // line 35
+            // line 39
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-outline-success my-2 my-sm-0 \" type=\"submit\">Вход</a>
             ";
         }
-        // line 37
+        // line 41
         echo "        </form>
 
     </div>
 </nav>
 ";
-        // line 41
+        // line 45
         $this->displayBlock('body', $context, $blocks);
-        // line 42
+        // line 46
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 57
         echo "</body>
 </html>";
         
@@ -142,7 +154,7 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
 
     }
 
-    // line 41
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -160,7 +172,7 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
 
     }
 
-    // line 42
+    // line 46
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +182,7 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 43
+        // line 47
         echo "    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"></script>
@@ -178,15 +190,15 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
             integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\"
             crossorigin=\"anonymous\"></script>
     <script src=\"";
-        // line 49
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/framework/vue/vue.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 50
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/framework/bootstrap-4.4.1/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     ";
-        // line 51
+        // line 55
         $this->displayBlock('addJs', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -225,7 +237,7 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
 
     public function getDebugInfo()
     {
-        return array (  190 => 51,  186 => 50,  182 => 49,  174 => 43,  164 => 42,  146 => 41,  127 => 5,  116 => 53,  114 => 42,  112 => 41,  106 => 37,  100 => 35,  94 => 33,  92 => 32,  79 => 22,  72 => 18,  63 => 12,  53 => 5,  47 => 1,);
+        return array (  202 => 55,  198 => 54,  194 => 53,  186 => 47,  176 => 46,  158 => 45,  139 => 5,  128 => 57,  126 => 46,  124 => 45,  118 => 41,  112 => 39,  109 => 38,  103 => 36,  97 => 34,  94 => 33,  92 => 32,  79 => 22,  72 => 18,  63 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -262,7 +274,11 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
 
         <form class=\"form-inline pl-3\">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <a href=\"{{ path('admin_home') }}\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Админочка</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href=\"{{ path('admin_home') }}\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Админочка</a>
+                {% else %}
+                    <a href=\"{{ path('manager_home') }}\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Менеджер</a>
+                {% endif %}
             {% else %}
                 <a href=\"{{ path('app_login') }}\" class=\"btn btn-outline-success my-2 my-sm-0 \" type=\"submit\">Вход</a>
             {% endif %}
@@ -283,6 +299,6 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
     {% block addJs %}{% endblock %}
 {% endblock %}
 </body>
-</html>", "main/base.html.twig", "C:\\working\\Books-repos\\templates\\main\\base.html.twig");
+</html>", "main/base.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\base.html.twig");
     }
 }

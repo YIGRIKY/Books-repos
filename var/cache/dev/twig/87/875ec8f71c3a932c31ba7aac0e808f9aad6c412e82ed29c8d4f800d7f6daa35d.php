@@ -318,6 +318,6 @@ class __TwigTemplate_cec855ad6ff4a4183b37c2446963d776dae0aa2ae2aebb6a7ffaef3e5d9
     {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig", "C:\\working\\Books-repos\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v3_pagination.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig", "C:\\Users\\egork\\Books-repos\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v3_pagination.html.twig");
     }
 }

@@ -1,8 +1,6 @@
 {% extends 'admin/adminbase.html.twig' %}
 {% block body %}
-    <h1>
-        {{ title }}
-    </h1>
+
     <style>
         body {
             background: linear-gradient(18deg, #dce5dc, #28e6d6, #28c3e6, #2880e6);
@@ -54,9 +52,6 @@
         </div>
 
 
-        {{ title }}
-    </h1>
-    <a href="{{ path('app_logout') }}">Log out</a>
-    <a href="{{ path('admin_user') }}">User</a>
+
 
 {% endblock %}

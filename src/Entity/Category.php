@@ -26,9 +26,11 @@ class Category
     private $category_name;
 
 
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
+        $this->categoriesAndBooks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,30 +53,32 @@ class Category
     /**
      * @return Collection|CategoriesAndBooks[]
      */
-    public function getCategory(): Collection
+    public function getCategoriesAndBooks(): Collection
     {
-        return $this->category;
+        return $this->categoriesAndBooks;
     }
 
-    public function addCategory(CategoriesAndBooks $category): self
+    public function addCategoriesAndBook(CategoriesAndBooks $categoriesAndBook): self
     {
-        if (!$this->category->contains($category)) {
-            $this->category[] = $category;
-            $category->setCategoryId($this);
+        if (!$this->categoriesAndBooks->contains($categoriesAndBook)) {
+            $this->categoriesAndBooks[] = $categoriesAndBook;
+            $categoriesAndBook->setCategoryid($this);
         }
 
         return $this;
     }
 
-    public function removeCategory(CategoriesAndBooks $category): self
+    public function removeCategoriesAndBook(CategoriesAndBooks $categoriesAndBook): self
     {
-        if ($this->category->removeElement($category)) {
+        if ($this->categoriesAndBooks->removeElement($categoriesAndBook)) {
             // set the owning side to null (unless already changed)
-            if ($category->getCategoryId() === $this) {
-                $category->setCategoryId(null);
+            if ($categoriesAndBook->getCategoryid() === $this) {
+                $categoriesAndBook->setCategoryid(null);
             }
         }
 
         return $this;
     }
+
+
 }

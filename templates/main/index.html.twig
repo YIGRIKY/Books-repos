@@ -99,7 +99,7 @@
                         let newDiv = document.createElement('div');
 
                         newDiv.innerHTML =  ` <ul>
-                    {%  for book in  appointments%}
+                    {%  for book in  appointments %}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="product">
@@ -116,6 +116,11 @@
                                         <p class="product-desc" style="text-indent: 20px">
                                             {{ book.description }}</p>
                                         <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class="product-title ">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +142,7 @@
                     printBlock.innerHTML= '';
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
-                    {%  for book in appointments %}
+                    {%  for book in  appointments %}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="product">
@@ -154,6 +159,11 @@
                                         <p class="product-desc" style="text-indent: 20px">
                                             {{ book.description }}</p>
                                         <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class="product-title ">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -176,8 +186,7 @@
                     printBlock.innerHTML= '';
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
-                    {%  for book in  appointments%}
-
+                    {%  for book in  appointments %}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="product">
@@ -194,6 +203,11 @@
                                         <p class="product-desc" style="text-indent: 20px">
                                             {{ book.description }}</p>
                                         <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class="product-title ">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +225,7 @@
             </script>
             <div class="col-md-8 products" id="books-menu">
                 <ul id="MyUl">
-                    {%  for book in appointments %}
+                    {%  for book in  appointments %}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="product">
@@ -227,9 +241,13 @@
                                         </p>
                                         <p class="product-desc" style="text-indent: 20px">
                                             {{ book.description }}</p>
-                                        <p class="product-title "><li>{{ book.author.getAuthorName() }}</li></p>
+                                        <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class="product-title ">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
-
                                 </div>
                             </div>
                         </div>

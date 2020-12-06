@@ -10,39 +10,24 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CategoriesAndBooks
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
 
     /**
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity=Books::class, inversedBy="id")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $bookId;
+
+    /**
+     * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="id")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categoryId;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Books::class, inversedBy="id")
-     */
-    private $bookId;
-
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getCategoryId(): ?Category
-    {
-        return $this->categoryId;
-    }
-
-    public function setCategoryId(?Category $categoryId): self
-    {
-        $this->categoryId = $categoryId;
-
-        return $this;
     }
 
     public function getBookId(): ?Books
@@ -53,6 +38,18 @@ class CategoriesAndBooks
     public function setBookId(?Books $bookId): self
     {
         $this->bookId = $bookId;
+
+        return $this;
+    }
+
+    public function getCategoryId(): ?Category
+    {
+        return $this->categoryId;
+    }
+
+    public function setCategoryId(?Category $categoryId): self
+    {
+        $this->categoryId = $categoryId;
 
         return $this;
     }

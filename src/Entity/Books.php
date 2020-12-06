@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\BooksRepository;
+use App\Repository\CategoriesAndBooksRepository;
+use Doctrine\Bundle\DoctrineBundle\Dbal\ManagerRegistryAwareConnectionProvider;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,6 +20,7 @@ class Books
      * @ORM\GeneratedValue
      * @ORM\OneToMany(targetEntity=CategoriesAndBooks::class, mappedBy="bookId")
      * @ORM\Column(type="integer")
+     *
      */
     private $id;
 
@@ -41,10 +45,25 @@ class Books
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $shortPlot;
+
+    /**
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $image;
+
+
+
+
+
 
     public function __construct()
     {
         $this->books = new ArrayCollection();
+        $this->categoriesAndBooks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,33 +120,29 @@ class Books
         return $this;
     }
 
-    /**
-     * @return Collection|CategoriesAndBooks[]
-     */
-    public function getBooks(): Collection
+    public function getShortPlot(): ?string
     {
-        return $this->books;
+        return $this->shortPlot;
     }
 
-    public function addBook(CategoriesAndBooks $book): self
+    public function setShortPlot(?string $shortPlot): self
     {
-        if (!$this->books->contains($book)) {
-            $this->books[] = $book;
-            $book->setBookId($this);
-        }
+        $this->shortPlot = $shortPlot;
 
         return $this;
     }
 
-    public function removeBook(CategoriesAndBooks $book): self
+    public function getImage(): ?string
     {
-        if ($this->books->removeElement($book)) {
-            // set the owning side to null (unless already changed)
-            if ($book->getBookId() === $this) {
-                $book->setBookId(null);
-            }
-        }
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
+
+
 }

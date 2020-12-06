@@ -210,7 +210,28 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
             // line 118
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 118), "getAuthorName", [], "method", false, false, false, 118), "html", null, true);
             echo "</p>
-                                    </div>
+                                        ";
+            // line 119
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 119, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                // line 120
+                echo "                                            ";
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 120), "getId", [], "method", false, false, false, 120), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 120)))) {
+                    // line 121
+                    echo "                                            <span class=\"product-title \">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 121), "getCategoryName", [], "method", false, false, false, 121), "html", null, true);
+                    echo "</span>
+                                            ";
+                }
+                // line 123
+                echo "                                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 124
+            echo "                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -219,12 +240,12 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 124
+        // line 129
         echo "                </ul>
                 <div class=\"navigation\">
                             ";
-        // line 126
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 126, $this->source); })()));
+        // line 131
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 131, $this->source); })()));
         echo "
                         </div>`;
                         printBlock.appendChild(newDiv);
@@ -240,11 +261,11 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
                     ";
-        // line 140
+        // line 145
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 140, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 145, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
-            // line 141
+            // line 146
             echo "                        <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -257,20 +278,41 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
                                         <p class=\"product-title\">
                                             <a href=\"#\">";
-            // line 152
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 152), "html", null, true);
+            // line 157
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 157), "html", null, true);
             echo "</a>
                                         </p>
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             ";
-            // line 155
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 155), "html", null, true);
+            // line 160
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 160), "html", null, true);
             echo "</p>
                                         <p class=\"product-title \">";
-            // line 156
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 156), "getAuthorName", [], "method", false, false, false, 156), "html", null, true);
+            // line 161
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 161), "getAuthorName", [], "method", false, false, false, 161), "html", null, true);
             echo "</p>
-                                    </div>
+                                        ";
+            // line 162
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 162, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                // line 163
+                echo "                                            ";
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 163), "getId", [], "method", false, false, false, 163), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 163)))) {
+                    // line 164
+                    echo "                                            <span class=\"product-title \">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 164), "getCategoryName", [], "method", false, false, false, 164), "html", null, true);
+                    echo "</span>
+                                            ";
+                }
+                // line 166
+                echo "                                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 167
+            echo "                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -279,12 +321,12 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 162
+        // line 172
         echo "                </ul>
                 <div class=\"navigation\">
                             ";
-        // line 164
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 164, $this->source); })()));
+        // line 174
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 174, $this->source); })()));
         echo "
                         </div>`;
                     // добавляем div в printBlock
@@ -301,68 +343,11 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
                     ";
-        // line 179
+        // line 189
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 179, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 189, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
-            // line 180
-            echo "
-                        <div class=\"row\">
-                            <div class=\"col-sm-12\">
-                                <div class=\"product\">
-                                    <div class=\"col \">
-                                        <div class=\"product-img\">
-                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
-                                        </div>
-                                    </div>
-                                    <div class=\"col pl-2\">
-
-                                        <p class=\"product-title\">
-                                            <a href=\"#\">";
-            // line 192
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 192), "html", null, true);
-            echo "</a>
-                                        </p>
-                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
-                                            ";
-            // line 195
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 195), "html", null, true);
-            echo "</p>
-                                        <p class=\"product-title \">";
-            // line 196
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 196), "getAuthorName", [], "method", false, false, false, 196), "html", null, true);
-            echo "</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 202
-        echo "                </ul>
-                <div class=\"navigation\">
-                            ";
-        // line 204
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 204, $this->source); })()));
-        echo "
-                        </div>`;
-                    // добавляем div в printBlock
-                    printBlock.appendChild(newDiv);
-                }
-                let printButtonTwelf = document.form.twelf;
-                printButtonTwelf.addEventListener(\"click\", printFormTwelf);
-            </script>
-            <div class=\"col-md-8 products\" id=\"books-menu\">
-                <ul id=\"MyUl\">
-                    ";
-        // line 214
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 214, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
-            // line 215
+            // line 190
             echo "                        <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -375,21 +360,41 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
                                         <p class=\"product-title\">
                                             <a href=\"#\">";
-            // line 226
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 226), "html", null, true);
+            // line 201
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 201), "html", null, true);
             echo "</a>
                                         </p>
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             ";
-            // line 229
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 229), "html", null, true);
+            // line 204
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 204), "html", null, true);
             echo "</p>
-                                        <p class=\"product-title \"><li>";
-            // line 230
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 230), "getAuthorName", [], "method", false, false, false, 230), "html", null, true);
-            echo "</li></p>
-                                    </div>
-
+                                        <p class=\"product-title \">";
+            // line 205
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 205), "getAuthorName", [], "method", false, false, false, 205), "html", null, true);
+            echo "</p>
+                                        ";
+            // line 206
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 206, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                // line 207
+                echo "                                            ";
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 207), "getId", [], "method", false, false, false, 207), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 207)))) {
+                    // line 208
+                    echo "                                            <span class=\"product-title \">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 208), "getCategoryName", [], "method", false, false, false, 208), "html", null, true);
+                    echo "</span>
+                                            ";
+                }
+                // line 210
+                echo "                                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 211
+            echo "                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -398,11 +403,88 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 237
+        // line 216
+        echo "                </ul>
+                <div class=\"navigation\">
+                            ";
+        // line 218
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 218, $this->source); })()));
+        echo "
+                        </div>`;
+                    // добавляем div в printBlock
+                    printBlock.appendChild(newDiv);
+                }
+                let printButtonTwelf = document.form.twelf;
+                printButtonTwelf.addEventListener(\"click\", printFormTwelf);
+            </script>
+            <div class=\"col-md-8 products\" id=\"books-menu\">
+                <ul id=\"MyUl\">
+                    ";
+        // line 228
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 228, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
+            // line 229
+            echo "                        <div class=\"row\">
+                            <div class=\"col-sm-12\">
+                                <div class=\"product\">
+                                    <div class=\"col \">
+                                        <div class=\"product-img\">
+                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                        </div>
+                                    </div>
+                                    <div class=\"col pl-2\">
+
+                                        <p class=\"product-title\">
+                                            <a href=\"#\">";
+            // line 240
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 240), "html", null, true);
+            echo "</a>
+                                        </p>
+                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
+                                            ";
+            // line 243
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 243), "html", null, true);
+            echo "</p>
+                                        <p class=\"product-title \">";
+            // line 244
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 244), "getAuthorName", [], "method", false, false, false, 244), "html", null, true);
+            echo "</p>
+                                        ";
+            // line 245
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 245, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                // line 246
+                echo "                                            ";
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 246), "getId", [], "method", false, false, false, 246), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 246)))) {
+                    // line 247
+                    echo "                                            <span class=\"product-title \">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 247), "getCategoryName", [], "method", false, false, false, 247), "html", null, true);
+                    echo "</span>
+                                            ";
+                }
+                // line 249
+                echo "                                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 250
+            echo "                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 255
         echo "                    <div class=\"navigation\">
                         ";
-        // line 238
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 238, $this->source); })()));
+        // line 256
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 256, $this->source); })()));
         echo "
                     </div>
                 </ul>
@@ -436,7 +518,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
     public function getDebugInfo()
     {
-        return array (  405 => 238,  402 => 237,  389 => 230,  385 => 229,  379 => 226,  366 => 215,  362 => 214,  349 => 204,  345 => 202,  333 => 196,  329 => 195,  323 => 192,  309 => 180,  305 => 179,  287 => 164,  283 => 162,  271 => 156,  267 => 155,  261 => 152,  248 => 141,  244 => 140,  227 => 126,  223 => 124,  211 => 118,  207 => 117,  201 => 114,  188 => 103,  184 => 102,  150 => 70,  141 => 68,  137 => 67,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  487 => 256,  484 => 255,  474 => 250,  468 => 249,  462 => 247,  459 => 246,  455 => 245,  451 => 244,  447 => 243,  441 => 240,  428 => 229,  424 => 228,  411 => 218,  407 => 216,  397 => 211,  391 => 210,  385 => 208,  382 => 207,  378 => 206,  374 => 205,  370 => 204,  364 => 201,  351 => 190,  347 => 189,  329 => 174,  325 => 172,  315 => 167,  309 => 166,  303 => 164,  300 => 163,  296 => 162,  292 => 161,  288 => 160,  282 => 157,  269 => 146,  265 => 145,  248 => 131,  244 => 129,  234 => 124,  228 => 123,  222 => 121,  219 => 120,  215 => 119,  211 => 118,  207 => 117,  201 => 114,  188 => 103,  184 => 102,  150 => 70,  141 => 68,  137 => 67,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -542,7 +624,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                         let newDiv = document.createElement('div');
 
                         newDiv.innerHTML =  ` <ul>
-                    {%  for book in  appointments%}
+                    {%  for book in  appointments %}
                         <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -559,6 +641,11 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             {{ book.description }}</p>
                                         <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -580,7 +667,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                     printBlock.innerHTML= '';
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
-                    {%  for book in appointments %}
+                    {%  for book in  appointments %}
                         <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -597,6 +684,11 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             {{ book.description }}</p>
                                         <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -619,8 +711,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                     printBlock.innerHTML= '';
                     let newDiv = document.createElement('div');
                     newDiv.innerHTML = ` <ul>
-                    {%  for book in  appointments%}
-
+                    {%  for book in  appointments %}
                         <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -637,6 +728,11 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             {{ book.description }}</p>
                                         <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +750,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
             </script>
             <div class=\"col-md-8 products\" id=\"books-menu\">
                 <ul id=\"MyUl\">
-                    {%  for book in appointments %}
+                    {%  for book in  appointments %}
                         <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
@@ -670,9 +766,13 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                                         </p>
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             {{ book.description }}</p>
-                                        <p class=\"product-title \"><li>{{ book.author.getAuthorName() }}</li></p>
+                                        <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
+                                        {% for category in categoryAndBooks %}
+                                            {% if category.bookId.getId() == book.getId() %}
+                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -690,6 +790,6 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
 
 
-{% endblock %}", "main/index.html.twig", "C:\\working\\Books-repos\\templates\\main\\index.html.twig");
+{% endblock %}", "main/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\index.html.twig");
     }
 }
