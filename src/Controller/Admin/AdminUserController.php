@@ -85,16 +85,7 @@ class AdminUserController extends AdminBaseController
         $form->handleRequest($request);
 
         if (($form->isSubmitted()) && ($form->isValid())) {
-//            $title = $books->getTitle();
-//            $year = $books->getYear();
-//            $author = $books->getAuthor();
-//            $discrip = $books->getDescription();
 
-
-//            $books->setTitle($form->get('title')->getData());
-//            $books->setYear($form->get('year')->getData());
-//            $books->setAuthor($form->get('author')->getData());
-//            $books->setDescription($form->get('description')->getData());
             $em->persist($books);
             $em->flush();
 

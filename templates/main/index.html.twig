@@ -35,11 +35,12 @@
         position: relative;
         margin-right: 10px;
     }
-    .product-title a {
+    .product-title  {
         color: #000;
         font-weight: 1500;
         text-transform: uppercase;
         text-align: center;
+        font-weight: bold;
     }
 
 
@@ -57,6 +58,7 @@
         font-weight: 500;
     }
 </style>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -68,19 +70,36 @@
                 </div>
 
                 <div class="list-group">
-                    <p class="list-group-item">Автор:</p>
-                    <form class="form-inline">
-                        <div class="list-group-item ml-6 bg-white text-white">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Укажите Автора:">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Выбрать</button>
+                    <p class="list-group-item bg-secondary text-white">Автор:</p>
+                    <form class="form-group">
+                        <div class="list-group-item ml-4 bg-white text-white">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Укажите Автора:" onkeyup="myFilter()" id="MyInput">
                         </div>
 
                     </form>
                 </div>
+
+                <div class="list-group">
+                    <p class="list-group-item bg-warning">Кол-во отображенных книг:</p>
+                    <form class="form-group" name="form">
+                        <div class="list-group-item ml-4 bg-white text-white">
+
+                            <input type="button" class="btn btn-outline-success my-2 my-sm-0" name="two" value="2">
+                            <input type="button"  class="btn btn-outline-success my-2 my-sm-0" name="five" value="5">
+                            <input class="btn btn-outline-danger my-2 my-sm-0" type="button" name="twelf" value="10">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-md-8 products">
-                <ul>
-                    {%  for book in books %}
+            <script>
+
+                function printForm(e) {
+                        let printBlock = document.getElementById("books-menu");
+                        printBlock.innerHTML = '';
+                        let newDiv = document.createElement('div');
+
+                        newDiv.innerHTML =  ` <ul>
+                    {%  for book in  appointments%}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="product">
@@ -95,18 +114,134 @@
                                             <a href="#">{{ book.title }}</a>
                                         </p>
                                         <p class="product-desc" style="text-indent: 20px">
-                                            {{ book.description }}
-                                        <p class="product-title">{{ book.author.getAuthorName() }}</p>
+                                            {{ book.description }}</p>
+                                        <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+                <div class="navigation">
+                            {{ knp_pagination_render(appointments) }}
+                        </div>`;
+                        printBlock.appendChild(newDiv);
+                    }
+                let printButton = document.form.two;
+                printButton.addEventListener("click", printForm);
+
+                function printFormFive(e)
+                {
+                    // получаем элемент printBlock
+                    let printBlock = document.getElementById("books-menu");
+                    printBlock.innerHTML= '';
+                    let newDiv = document.createElement('div');
+                    newDiv.innerHTML = ` <ul>
+                    {%  for book in appointments %}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="product">
+                                    <div class="col ">
+                                        <div class="product-img">
+                                            <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col pl-2">
+
+                                        <p class="product-title">
+                                            <a href="#">{{ book.title }}</a>
+                                        </p>
+                                        <p class="product-desc" style="text-indent: 20px">
+                                            {{ book.description }}</p>
+                                        <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+                <div class="navigation">
+                            {{ knp_pagination_render(appointments) }}
+                        </div>`;
+                    // добавляем div в printBlock
+                    printBlock.appendChild(newDiv);
+                }
+                let printButtonFive = document.form.five;
+                printButtonFive.addEventListener("click", printFormFive);
+
+                function printFormTwelf(e)
+                {
+                    // получаем элемент printBlock
+                    let printBlock = document.getElementById("books-menu");
+                    printBlock.innerHTML= '';
+                    let newDiv = document.createElement('div');
+                    newDiv.innerHTML = ` <ul>
+                    {%  for book in  appointments%}
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="product">
+                                    <div class="col ">
+                                        <div class="product-img">
+                                            <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col pl-2">
+
+                                        <p class="product-title">
+                                            <a href="#">{{ book.title }}</a>
+                                        </p>
+                                        <p class="product-desc" style="text-indent: 20px">
+                                            {{ book.description }}</p>
+                                        <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+                <div class="navigation">
+                            {{ knp_pagination_render(appointments) }}
+                        </div>`;
+                    // добавляем div в printBlock
+                    printBlock.appendChild(newDiv);
+                }
+                let printButtonTwelf = document.form.twelf;
+                printButtonTwelf.addEventListener("click", printFormTwelf);
+            </script>
+            <div class="col-md-8 products" id="books-menu">
+                <ul id="MyUl">
+                    {%  for book in appointments %}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="product">
+                                    <div class="col ">
+                                        <div class="product-img">
+                                            <a href="#"><img src="https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg" alt="" class="float-left"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col pl-2">
+
+                                        <p class="product-title">
+                                            <a href="#">{{ book.title }}</a>
+                                        </p>
+                                        <p class="product-desc" style="text-indent: 20px">
+                                            {{ book.description }}</p>
+                                        <p class="product-title "><li>{{ book.author.getAuthorName() }}</li></p>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
+                    <div class="navigation">
+                        {{ knp_pagination_render(appointments) }}
+                    </div>
                 </ul>
 
-
         </div>
+
+
     </div>
 
 
