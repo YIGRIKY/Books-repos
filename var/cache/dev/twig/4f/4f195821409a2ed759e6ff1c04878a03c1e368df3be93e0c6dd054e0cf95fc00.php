@@ -75,33 +75,56 @@ class __TwigTemplate_a1c4b8c79b41a898f88f7b45510145eef6ddab2ea325b7c2907b05fe64d
     <a href=\"";
         // line 7
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_create");
-        echo "\">Create User</a>
+        echo "\" class=\"badge badge-secondary bg-success\">Create User</a></br></br>
     <a href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_books");
-        echo "\">Create Books</a>
+        echo "\" class=\"badge badge-secondary bg-success\">Create Books</a></br></br>
     <a href=\"";
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_category");
-        echo "\">Create Category</a>
-    <h2>User Control: </h2>
+        echo "\" class=\"badge badge-secondary bg-success\">Create Category</a></br></br>
+    ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["books"]) || array_key_exists("books", $context) ? $context["books"] : (function () { throw new RuntimeError('Variable "books" does not exist.', 10, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
+            // line 11
+            echo "    <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_update", ["id" => twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 11)]), "html", null, true);
+            echo "\"
+    class=\"badge badge-secondary bg-dark\" style=\"font-size: 18px; margin: 10px\">Update Books ";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 12), "html", null, true);
+            echo "</a></br>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 14
+        echo "        <h2>User Control: </h2>
 
    <ul>
        ";
-        // line 13
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 13, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 17, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 14
-            echo "       <li>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 14), "html", null, true);
+            // line 18
+            echo "       <li class=\"badge badge-secondary bg-primary\" style=\"font-size: 18px; margin: 10px\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 18), "html", null, true);
+            echo "  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 18), "html", null, true);
+            echo "  ";
+            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 18)), "html", null, true);
             echo "</li>
        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 16
+        // line 20
         echo "   </ul>
 
 
@@ -126,7 +149,7 @@ class __TwigTemplate_a1c4b8c79b41a898f88f7b45510145eef6ddab2ea325b7c2907b05fe64d
 
     public function getDebugInfo()
     {
-        return array (  105 => 16,  96 => 14,  92 => 13,  85 => 9,  81 => 8,  77 => 7,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  128 => 20,  115 => 18,  111 => 17,  106 => 14,  98 => 12,  93 => 11,  89 => 10,  85 => 9,  81 => 8,  77 => 7,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -137,18 +160,22 @@ class __TwigTemplate_a1c4b8c79b41a898f88f7b45510145eef6ddab2ea325b7c2907b05fe64d
         {{ title }}
     </h1>
 
-    <a href=\"{{ path('admin_user_create') }}\">Create User</a>
-    <a href=\"{{ path('admin_user_books') }}\">Create Books</a>
-    <a href=\"{{ path('admin_user_category') }}\">Create Category</a>
-    <h2>User Control: </h2>
+    <a href=\"{{ path('admin_user_create') }}\" class=\"badge badge-secondary bg-success\">Create User</a></br></br>
+    <a href=\"{{ path('admin_user_books') }}\" class=\"badge badge-secondary bg-success\">Create Books</a></br></br>
+    <a href=\"{{ path('admin_user_category') }}\" class=\"badge badge-secondary bg-success\">Create Category</a></br></br>
+    {% for book in books %}
+    <a href=\"{{ path('admin_user_update',{'id': book.id }) }}\"
+    class=\"badge badge-secondary bg-dark\" style=\"font-size: 18px; margin: 10px\">Update Books {{ book.title }}</a></br>
+    {% endfor %}
+        <h2>User Control: </h2>
 
    <ul>
        {%  for user in users%}
-       <li>{{ user.email}}</li>
+       <li class=\"badge badge-secondary bg-primary\" style=\"font-size: 18px; margin: 10px\">{{ user.email}}  {{ user.id }}  {{ user.roles | json_encode }}</li>
        {% endfor %}
    </ul>
 
 
-{% endblock %}", "admin/user/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\admin\\user\\index.html.twig");
+{% endblock %}", "admin/user/index.html.twig", "C:\\Books-repos\\templates\\admin\\user\\index.html.twig");
     }
 }

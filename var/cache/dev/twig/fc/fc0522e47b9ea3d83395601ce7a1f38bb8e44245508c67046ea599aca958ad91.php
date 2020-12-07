@@ -59,6 +59,6 @@ class __TwigTemplate_2155549ade2669a810690e86a47381a1354b993b6cfa41db604517b1cea
 
     public function getSourceContext()
     {
-        return new Source("", "main/style.css", "C:\\working\\Books-repos\\templates\\main\\style.css");
+        return new Source("", "main/style.css", "C:\\Books-repos\\templates\\main\\style.css");
     }
 }

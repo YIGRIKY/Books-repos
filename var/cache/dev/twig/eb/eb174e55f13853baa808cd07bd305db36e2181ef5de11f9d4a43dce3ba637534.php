@@ -212,6 +212,6 @@ class __TwigTemplate_26bbfb16a028941943f9019613180fda8a4bab4726884328385d9879e9e
     {% endfor %}
     </tbody>
 </table>
-", "@Twig/Exception/logs.html.twig", "C:\\working\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\logs.html.twig");
+", "@Twig/Exception/logs.html.twig", "C:\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\logs.html.twig");
     }
 }

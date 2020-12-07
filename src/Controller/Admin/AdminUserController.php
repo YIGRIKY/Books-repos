@@ -31,10 +31,12 @@ class AdminUserController extends AdminBaseController
     public function index()
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+        $books = $this->getDoctrine()->getRepository(Books::class)->findAll();
 
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Пользователи';
         $forRender['users'] = $users;
+        $forRender['books'] = $books;
         return $this->render('admin/user/index.html.twig', $forRender);
     }
 
@@ -94,6 +96,7 @@ class AdminUserController extends AdminBaseController
             $categoryAndBooks->setCategoryId($form->get('category')->getData());
             $em->persist($categoryAndBooks);
             $em->flush();
+            $this->addFlash('success',"Books Create!");
             return $this->redirectToRoute('admin_user');
         }
 
@@ -125,6 +128,45 @@ class AdminUserController extends AdminBaseController
         $forRender = parent::renderDefualt();
         $forRender['title'] = 'Форма создания категории';
         $forRender['form'] = $form->createView();
+        return $this->render('admin/user/form.html.twig', $forRender);
+    }
+
+    /**
+     * @Route ("/admin/user/books/update/{id}", name="admin_user_update")
+     * @param int $id
+     * @param Request $request
+     *@return RedirectResponse|Response
+     */
+
+    public function updateBooks(int $id,Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $books = $this->getDoctrine()->getRepository(Books::class)->find($id);
+        $booksAndCategorType= $this->getDoctrine()->getRepository(CategoriesAndBooks::class)->findBy(array('bookId'=>$id));
+        $form = $this->createForm(BooksType::class,$books);
+        $form->handleRequest($request);
+        if(($form->isSubmitted()) && ($form->isValid()))
+        {
+            if($form->get('save')->isClicked())
+            {
+
+                $em->flush();
+
+            }
+            if($form->get('delete')->isClicked())
+            {
+                $em->remove($books);
+                $em->remove($booksAndCategorType[0]);
+            }
+            $em->flush();
+            return $this->redirectToRoute('admin_home');
+        }
+
+        $forRender = parent::renderDefualt();
+        $forRender['title'] = 'Форма update категории';
+        $forRender['form'] = $form->createView();
+
         return $this->render('admin/user/form.html.twig', $forRender);
     }
 }

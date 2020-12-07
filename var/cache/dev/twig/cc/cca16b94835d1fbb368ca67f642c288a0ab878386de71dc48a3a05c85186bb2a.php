@@ -112,6 +112,6 @@ class __TwigTemplate_ed12824d2dc9cfca4ac4d83700887296810899df8b5002129f7fb0b6bca
     </exception>
 {% endfor %}
 </error>
-", "@Twig/Exception/exception.xml.twig", "C:\\working\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception.xml.twig");
+", "@Twig/Exception/exception.xml.twig", "C:\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception.xml.twig");
     }
 }

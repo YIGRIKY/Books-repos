@@ -20,6 +20,7 @@ return [
     'admin_user_create' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::create'], [], [['text', '/admin/user/create']], [], []],
     'admin_user_books' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::createBooks'], [], [['text', '/admin/user/books']], [], []],
     'admin_user_category' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::createCategory'], [], [['text', '/admin/user/category']], [], []],
+    'admin_user_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminUserController::updateBooks'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/user/books/update']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\Main\\HomeController::index'], [], [['text', '/']], [], []],
     'manager_books' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createBooks'], [], [['text', '/manager/books']], [], []],
     'manager_category' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createCategory'], [], [['text', '/manager/category']], [], []],

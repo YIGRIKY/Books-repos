@@ -135,6 +135,6 @@ class __TwigTemplate_894e369698e36227cfd34a6d113571b9c12a3d1d4996083ab51930f7886
         </div>
     </body>
 </html>
-", "@Twig/Exception/error.html.twig", "C:\\working\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.html.twig");
+", "@Twig/Exception/error.html.twig", "C:\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.html.twig");
     }
 }

@@ -148,6 +148,6 @@ class __TwigTemplate_e9971bf0cf8d1fa03218b205c70c2d733c8d6688de24581242c5ba9fa1e
     <div class=\"container content\" style=\"width: 35%; font-size: 24px; font-weight: bold\">
    {{ form(form) }}
     </div>
-{% endblock %}", "admin/user/form.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\admin\\user\\form.html.twig");
+{% endblock %}", "admin/user/form.html.twig", "C:\\Books-repos\\templates\\admin\\user\\form.html.twig");
     }
 }

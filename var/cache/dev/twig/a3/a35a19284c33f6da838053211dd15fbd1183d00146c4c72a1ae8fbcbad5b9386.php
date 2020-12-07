@@ -97,6 +97,6 @@ class __TwigTemplate_fba941ad91b2984dadd92679a2639d6c637f701e29bb23de8875d47201d
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "C:\\working\\Books-repos\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "C:\\Books-repos\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
     }
 }

@@ -275,6 +275,6 @@ class __TwigTemplate_f88927e889921fadc3624aa4ab62a6cdfc382be5bd381d80793bc486159
     </body>
 </html>
 {% block after_html %}{% endblock %}
-", "@Twig/layout.html.twig", "C:\\working\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\layout.html.twig");
+", "@Twig/layout.html.twig", "C:\\Books-repos\\vendor\\symfony\\twig-bundle\\Resources\\views\\layout.html.twig");
     }
 }

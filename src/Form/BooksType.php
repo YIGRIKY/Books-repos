@@ -41,6 +41,10 @@ class BooksType extends AbstractType
             ->add('save', SubmitType::class, array(
                 'label' => 'Сохранить'
             ))
+            ->add('delete', SubmitType::class, array(
+                'label' => 'Удалить',
+                'attr'=>['class'=>'btn btn-danger stretched-link']
+            ))
         ;
     }
 

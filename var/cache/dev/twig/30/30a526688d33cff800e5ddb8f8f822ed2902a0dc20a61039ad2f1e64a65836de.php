@@ -161,6 +161,6 @@ printButton.addEventListener(\"click\", printForm);";
     printBlock.appendChild(newDiv);
 }
 let printButton = document.form.two;
-printButton.addEventListener(\"click\", printForm);", "main/js/create2.js", "C:\\working\\Books-repos\\templates\\main\\js\\create2.js");
+printButton.addEventListener(\"click\", printForm);", "main/js/create2.js", "C:\\Books-repos\\templates\\main\\js\\create2.js");
     }
 }

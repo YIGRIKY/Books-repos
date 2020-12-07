@@ -346,6 +346,6 @@ class __TwigTemplate_9d9e01389c6b4454498fd7d3fe60964cbae824ab78a7f5b10e271143d75
 
 </form>
 {% endblock %}
-", "security/login.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\Books-repos\\templates\\security\\login.html.twig");
     }
 }
