@@ -34,20 +34,45 @@ class HomeController extends BaseController
 
         // Get some repository of data, in our case we have an Appointments entity
         $appointmentsRepository = $em->getRepository(Books::class);
-        if (isset($_POST['num']))
+        if (isset($_POST['num']) || isset($_COOKIE['pageNum']))
         {
-            switch ($_POST['num'])
+            if (isset($_POST['num']))
             {
-                case 2:
-                    $appointments = $this->find($request, $paginator, $appointmentsRepository, 2);
-                    break;
-                case 5:
-                    $appointments = $this->find($request, $paginator, $appointmentsRepository, 5);
-                    break;
-                case 12:
-                    $appointments = $this->find($request, $paginator, $appointmentsRepository, 12);
-                    break;
+                switch ($_POST['num'] )
+                {
+                    case 2:
+                        setcookie('pageNum', 2);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 2);
+                        break;
+                    case 5:
+                        setcookie('pageNum', 5);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 5);
+                        break;
+                    case 12:
+                        setcookie('pageNum', 12);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 12);
+                        break;
+                }
             }
+            else
+            {
+                switch ($_COOKIE['pageNum'] )
+                {
+                    case 2:
+                        setcookie('pageNum', 2);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 2);
+                        break;
+                    case 5:
+                        setcookie('pageNum', 5);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 5);
+                        break;
+                    case 12:
+                        setcookie('pageNum', 12);
+                        $appointments = $this->find($request, $paginator, $appointmentsRepository, 12);
+                        break;
+                }
+            }
+
         }
         else
         {
