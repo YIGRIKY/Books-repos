@@ -246,4 +246,37 @@ class Category extends \App\Entity\Category implements \Doctrine\ORM\Proxy\Proxy
         return parent::removeCategoriesAndBook($categoriesAndBook);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getBooks(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBooks', []);
+
+        return parent::getBooks();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addBook(\App\Entity\Books $book): \App\Entity\Category
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addBook', [$book]);
+
+        return parent::addBook($book);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeBook(\App\Entity\Books $book): \App\Entity\Category
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeBook', [$book]);
+
+        return parent::removeBook($book);
+    }
+
 }

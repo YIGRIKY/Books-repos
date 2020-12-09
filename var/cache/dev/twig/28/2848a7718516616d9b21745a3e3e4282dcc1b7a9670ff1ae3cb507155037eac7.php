@@ -299,6 +299,6 @@ class __TwigTemplate_fbff6c7d736bdc2b9e3aae2b6684c79a7f9b8bb57f7a5ecda8418fc201c
     {% block addJs %}{% endblock %}
 {% endblock %}
 </body>
-</html>", "main/base.html.twig", "C:\\Books-repos\\templates\\main\\base.html.twig");
+</html>", "main/base.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\base.html.twig");
     }
 }

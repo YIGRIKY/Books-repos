@@ -135,34 +135,40 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-md-4\">
-                <div class=\"list-group\">
-                    <p class=\"list-group-item\">Жанры:</p>
-                    ";
-        // line 72
+                <form class=\"form-group\" method=\"post\" name=\"form\">
+                    <div class=\"list-group\">
+                        <p class=\"list-group-item\">Жанры:</p>
+                        ";
+        // line 73
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 72, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 73, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 73
-            echo "                        <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 73), "html", null, true);
-            echo "</a>
-                    ";
+            // line 74
+            echo "                            <span >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 74), "html", null, true);
+            echo "</span>
+                            <input type=\"checkbox\" class=\"btn btn-outline-success my-2 my-sm-0\" name=\"categoryName\" value=";
+            // line 75
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 75), "html", null, true);
+            echo ">
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
-        echo "                </div>
-
+        // line 77
+        echo "                        <input type=\"submit\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"Найти\">
+                    </div>
+                </form>
                 <div class=\"list-group\">
                     <p class=\"list-group-item bg-secondary text-white\">Автор:</p>
                     <form class=\"form-group\" action=\"";
-        // line 79
+        // line 82
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\" method=\"post\" name=\"src\">
                         <div class=\"list-group-item ml-4 bg-white text-white\">
-                            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Укажите Автора:\"  name=\"find\" >
-                            <input type=\"button\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"set\">
+                            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Укажите Автора:\"  name=\"find\">
+                            <input type=\"submit\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"Найти\">
                         </div>
 
                     </form>
@@ -170,66 +176,82 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
                 <div class=\"list-group\">
                     <p class=\"list-group-item bg-warning\">Кол-во отображенных книг:</p>
-                    <form class=\"form-group\" name=\"form\">
+                        <h1></h1>
+                    <form class=\"form-group\" method=\"post\" name=\"form\">
                         <div class=\"list-group-item ml-4 bg-white text-white\">
-
-                            <input type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" name=\"two\" value=\"2\">
-                            <input type=\"button\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"five\" value=\"5\">
-                            <input class=\"btn btn-outline-danger my-2 my-sm-0\" type=\"button\" name=\"twelf\" value=\"10\">
+                            <span style=\"background: black\">2</span><input type=\"radio\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=2>
+                            <span style=\"background: black\">5</span><input type=\"radio\"   class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=5>
+                            <span style=\"background: black\">12</span><input type=\"radio\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=\"12\">
+                            <input type=\"submit\" class=\"btn btn-outline-danger my-2 my-sm-0\" name=\"submit\" value=\"Подтвердить\">
                         </div>
                     </form>
                 </div>
             </div>
-
-
-            <script>
-                function printForm(e) {
-                    let printBlock = document.getElementById(\"books-menu\");
-                    printBlock.innerHTML = '';
-                    let newDiv = document.createElement('div');
-                    newDiv.innerHTML =  `<ul>
+            <div class=\"col-md-8 products\" id=\"books-menu\">
+                <ul >
                     ";
-        // line 108
+        // line 106
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 108, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 106, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
-            // line 109
+            // line 107
             echo "                        <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
                                     <div class=\"col \">
                                         <div class=\"product-img\">
-                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                            <a href=\"";
+            // line 112
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 112)]), "html", null, true);
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "image", [], "any", false, false, false, 112), "html", null, true);
+            echo "\" alt=\"\" class=\"float-left\"></a>
                                         </div>
                                     </div>
                                     <div class=\"col pl-2\">
 
                                         <p class=\"product-title\">
-
+                                            <a href=\"";
+            // line 118
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 118)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 118), "html", null, true);
+            echo "</a>
                                         </p>
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             ";
-            // line 123
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 123), "html", null, true);
+            // line 121
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 121), "html", null, true);
             echo "</p>
                                         <p class=\"product-title \">";
-            // line 124
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 124), "getAuthorName", [], "method", false, false, false, 124), "html", null, true);
+            // line 122
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 122), "getAuthorName", [], "method", false, false, false, 122), "html", null, true);
             echo "</p>
                                         ";
-            // line 125
+            // line 123
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 125, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 123, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 126
+                // line 124
                 echo "                                            ";
-                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 126), "getId", [], "method", false, false, false, 126), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 126)))) {
-                    // line 127
-                    echo "                                            <span class=\"product-title \">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 127), "getCategoryName", [], "method", false, false, false, 127), "html", null, true);
-                    echo "</span>
-                                            ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["category"], "getBooks", [], "method", false, false, false, 124));
+                foreach ($context['_seq'] as $context["_key"] => $context["books"]) {
+                    // line 125
+                    echo "                                                ";
+                    if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["books"], "id", [], "any", false, false, false, 125), twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 125)))) {
+                        // line 126
+                        echo "                                                    <span class=\"product-title \">";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 126), "html", null, true);
+                        echo "</span>
+                                                ";
+                    }
+                    // line 128
+                    echo "                                            ";
                 }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['books'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
                 // line 129
                 echo "                                        ";
             }
@@ -241,99 +263,16 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
                                 </div>
                             </div>
                         </div>
-
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 136
-        echo "                </ul>
-                <div class=\"navigation\">
-                            ";
-        // line 138
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 138, $this->source); })()));
-        echo "
-                        </div>`;
-                    printBlock.appendChild(newDiv);
-                }
-                let printButton = document.form.two;
-                printButton.addEventListener(\"click\", printForm());
-            </script>
-
-            <div class=\"col-md-8 products\" id=\"books-menu\">
-                <ul >
-                    ";
-        // line 148
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["appointments2"]) || array_key_exists("appointments2", $context) ? $context["appointments2"] : (function () { throw new RuntimeError('Variable "appointments2" does not exist.', 148, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["book"]) {
-            // line 149
-            echo "
-                        <div class=\"row\">
-                            <div class=\"col-sm-12\">
-                                <div class=\"product\">
-                                    <div class=\"col \">
-                                        <div class=\"product-img\">
-                                            <a href=\"#\"><img src=\"";
-            // line 155
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "image", [], "any", false, false, false, 155), "html", null, true);
-            echo "\" alt=\"\" class=\"float-left\"></a>
-                                        </div>
-                                    </div>
-                                    <div class=\"col pl-2\">
-
-                                        <p class=\"product-title\">
-                                            <a href=\"#\">";
-            // line 161
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "title", [], "any", false, false, false, 161), "html", null, true);
-            echo "</a>
-                                        </p>
-                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
-                                            ";
-            // line 164
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "description", [], "any", false, false, false, 164), "html", null, true);
-            echo "</p>
-                                        <p class=\"product-title \">";
-            // line 165
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["book"], "author", [], "any", false, false, false, 165), "getAuthorName", [], "method", false, false, false, 165), "html", null, true);
-            echo "</p>
-                                        ";
-            // line 166
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["categoryAndBooks"]) || array_key_exists("categoryAndBooks", $context) ? $context["categoryAndBooks"] : (function () { throw new RuntimeError('Variable "categoryAndBooks" does not exist.', 166, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 167
-                echo "                                            ";
-                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "bookId", [], "any", false, false, false, 167), "getId", [], "method", false, false, false, 167), twig_get_attribute($this->env, $this->source, $context["book"], "getId", [], "method", false, false, false, 167)))) {
-                    // line 168
-                    echo "                                            <span class=\"product-title \">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "categoryId", [], "any", false, false, false, 168), "getCategoryName", [], "method", false, false, false, 168), "html", null, true);
-                    echo "</span>
-                                            ";
-                }
-                // line 170
-                echo "                                        ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 171
-            echo "                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 177
+        // line 135
         echo "                    <div class=\"navigation\">
                         ";
-        // line 178
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 178, $this->source); })()));
+        // line 136
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 136, $this->source); })()));
         echo "
                     </div>
                 </ul>
@@ -366,7 +305,7 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
     public function getDebugInfo()
     {
-        return array (  336 => 178,  333 => 177,  322 => 171,  316 => 170,  310 => 168,  307 => 167,  303 => 166,  299 => 165,  295 => 164,  289 => 161,  280 => 155,  272 => 149,  268 => 148,  255 => 138,  251 => 136,  240 => 130,  234 => 129,  228 => 127,  225 => 126,  221 => 125,  217 => 124,  213 => 123,  197 => 109,  193 => 108,  161 => 79,  155 => 75,  146 => 73,  142 => 72,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  275 => 136,  272 => 135,  262 => 130,  256 => 129,  250 => 128,  244 => 126,  241 => 125,  236 => 124,  232 => 123,  228 => 122,  224 => 121,  216 => 118,  205 => 112,  198 => 107,  194 => 106,  167 => 82,  160 => 77,  152 => 75,  147 => 74,  143 => 73,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -440,19 +379,22 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-md-4\">
-                <div class=\"list-group\">
-                    <p class=\"list-group-item\">Жанры:</p>
-                    {% for category in categories %}
-                        <a href=\"#\" class=\"list-group-item ml-4 bg-info text-white\">{{ category.getCategoryName() }}</a>
-                    {% endfor %}
-                </div>
-
+                <form class=\"form-group\" method=\"post\" name=\"form\">
+                    <div class=\"list-group\">
+                        <p class=\"list-group-item\">Жанры:</p>
+                        {% for category in categories %}
+                            <span >{{ category.getCategoryName() }}</span>
+                            <input type=\"checkbox\" class=\"btn btn-outline-success my-2 my-sm-0\" name=\"categoryName\" value={{ category.getCategoryName() }}>
+                        {% endfor %}
+                        <input type=\"submit\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"Найти\">
+                    </div>
+                </form>
                 <div class=\"list-group\">
                     <p class=\"list-group-item bg-secondary text-white\">Автор:</p>
                     <form class=\"form-group\" action=\"{{ path('home') }}\" method=\"post\" name=\"src\">
                         <div class=\"list-group-item ml-4 bg-white text-white\">
-                            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Укажите Автора:\"  name=\"find\" >
-                            <input type=\"button\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"set\">
+                            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Укажите Автора:\"  name=\"find\">
+                            <input type=\"submit\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"set\" value=\"Найти\">
                         </div>
 
                     </form>
@@ -460,92 +402,47 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
                 <div class=\"list-group\">
                     <p class=\"list-group-item bg-warning\">Кол-во отображенных книг:</p>
-                    <form class=\"form-group\" name=\"form\">
+                        <h1></h1>
+                    <form class=\"form-group\" method=\"post\" name=\"form\">
                         <div class=\"list-group-item ml-4 bg-white text-white\">
-
-                            <input type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" name=\"two\" value=\"2\">
-                            <input type=\"button\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"five\" value=\"5\">
-                            <input class=\"btn btn-outline-danger my-2 my-sm-0\" type=\"button\" name=\"twelf\" value=\"10\">
+                            <span style=\"background: black\">2</span><input type=\"radio\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=2>
+                            <span style=\"background: black\">5</span><input type=\"radio\"   class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=5>
+                            <span style=\"background: black\">12</span><input type=\"radio\"  class=\"btn btn-outline-success my-2 my-sm-0\" name=\"num\" value=\"12\">
+                            <input type=\"submit\" class=\"btn btn-outline-danger my-2 my-sm-0\" name=\"submit\" value=\"Подтвердить\">
                         </div>
                     </form>
                 </div>
             </div>
-
-
-            <script>
-                function printForm(e) {
-                    let printBlock = document.getElementById(\"books-menu\");
-                    printBlock.innerHTML = '';
-                    let newDiv = document.createElement('div');
-                    newDiv.innerHTML =  `<ul>
+            <div class=\"col-md-8 products\" id=\"books-menu\">
+                <ul >
                     {%  for book in  appointments %}
                         <div class=\"row\">
                             <div class=\"col-sm-12\">
                                 <div class=\"product\">
                                     <div class=\"col \">
                                         <div class=\"product-img\">
-                                            <a href=\"#\"><img src=\"https://cdn1.ozone.ru/s3/multimedia-y/6010159846.jpg\" alt=\"\" class=\"float-left\"></a>
+                                            <a href=\"{{ path('book_detail', {'id': book.id }) }}\"><img src=\"{{ book.image }}\" alt=\"\" class=\"float-left\"></a>
                                         </div>
                                     </div>
                                     <div class=\"col pl-2\">
 
                                         <p class=\"product-title\">
-
+                                            <a href=\"{{ path('book_detail', {'id': book.id}) }}\">{{ book.title }}</a>
                                         </p>
                                         <p class=\"product-desc\" style=\"text-indent: 20px\">
                                             {{ book.description }}</p>
                                         <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
-                                        {% for category in categoryAndBooks %}
-                                            {% if category.bookId.getId() == book.getId() %}
-                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
-                                            {% endif %}
+                                        {% for category in categories %}
+                                            {% for books in category.getBooks() %}
+                                                {% if books.id == book.id %}
+                                                    <span class=\"product-title \">{{ category.getCategoryName() }}</span>
+                                                {% endif %}
+                                            {% endfor %}
                                         {% endfor %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                    {% endfor %}
-                </ul>
-                <div class=\"navigation\">
-                            {{ knp_pagination_render(appointments) }}
-                        </div>`;
-                    printBlock.appendChild(newDiv);
-                }
-                let printButton = document.form.two;
-                printButton.addEventListener(\"click\", printForm());
-            </script>
-
-            <div class=\"col-md-8 products\" id=\"books-menu\">
-                <ul >
-                    {%  for book in  appointments2 %}
-
-                        <div class=\"row\">
-                            <div class=\"col-sm-12\">
-                                <div class=\"product\">
-                                    <div class=\"col \">
-                                        <div class=\"product-img\">
-                                            <a href=\"#\"><img src=\"{{ book.image }}\" alt=\"\" class=\"float-left\"></a>
-                                        </div>
-                                    </div>
-                                    <div class=\"col pl-2\">
-
-                                        <p class=\"product-title\">
-                                            <a href=\"#\">{{ book.title }}</a>
-                                        </p>
-                                        <p class=\"product-desc\" style=\"text-indent: 20px\">
-                                            {{ book.description }}</p>
-                                        <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
-                                        {% for category in categoryAndBooks %}
-                                            {% if category.bookId.getId() == book.getId() %}
-                                            <span class=\"product-title \">{{ category.categoryId.getCategoryName() }}</span>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     {% endfor %}
                     <div class=\"navigation\">
                         {{ knp_pagination_render(appointments) }}
@@ -559,6 +456,6 @@ class __TwigTemplate_0014ef631384f578e55d69fd971b16f0abadb0658bff9638d594a2b34bd
 
 
 
-{% endblock %}", "main/index.html.twig", "C:\\Books-repos\\templates\\main\\index.html.twig");
+{% endblock %}", "main/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\index.html.twig");
     }
 }

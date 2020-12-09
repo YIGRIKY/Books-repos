@@ -197,6 +197,6 @@ class __TwigTemplate_e87d97fdef38419de81c4d2f6d846b371a867f45954a6bef26343f1d7c9
         </div>
 
 
-{% endblock %}", "manager/index.html.twig", "C:\\Books-repos\\templates\\manager\\index.html.twig");
+{% endblock %}", "manager/index.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\manager\\index.html.twig");
     }
 }

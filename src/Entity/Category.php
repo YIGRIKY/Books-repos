@@ -25,12 +25,19 @@ class Category
      */
     private $category_name;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Books::class, mappedBy="category")
+     */
+    private $books;
+
+
 
 
     public function __construct()
     {
         $this->category = new ArrayCollection();
         $this->categoriesAndBooks = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -75,6 +82,33 @@ class Category
             if ($categoriesAndBook->getCategoryid() === $this) {
                 $categoriesAndBook->setCategoryid(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Books[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Books $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->addCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Books $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            $book->removeCategory($this);
         }
 
         return $this;

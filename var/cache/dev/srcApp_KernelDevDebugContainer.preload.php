@@ -9,8 +9,8 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
     return;
 }
 
-require 'C:\\Books-repos\\vendor/autoload.php';
-require __DIR__.'/ContainerQXPnaaS/srcApp_KernelDevDebugContainer.php';
+require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
+require __DIR__.'/Container0ZP9UvS/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -48,7 +48,6 @@ $classes[] = 'App\Form\CategoryType';
 $classes[] = 'App\Form\UserType';
 $classes[] = 'App\Repository\AuthorRepository';
 $classes[] = 'App\Repository\BooksRepository';
-$classes[] = 'App\Repository\CategoriesAndBooksRepository';
 $classes[] = 'App\Repository\CategoryRepository';
 $classes[] = 'App\Repository\UserRepository';
 $classes[] = 'App\Security\UserAuthenticator';

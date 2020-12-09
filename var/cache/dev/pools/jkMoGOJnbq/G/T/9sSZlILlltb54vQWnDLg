@@ -14,7 +14,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 2 => 'categoryId',
             ],
             'targetEntity' => [
-                2 => 'App\\Entity\\CategoriesAndBooks',
+                2 => 'CategoriesAndBooks',
             ],
             'type' => [
                 3 => 'integer',

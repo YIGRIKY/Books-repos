@@ -15,6 +15,7 @@ use App\Entity\Category;
 use App\Entity\User;
 use App\Form\BooksType;
 use App\Form\CategoryType;
+use App\Form\EntryFormType;
 use App\Form\UserType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -46,9 +47,6 @@ class AdminUserController extends AdminBaseController
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @return RedirectResponse|Response
      */
-
-
-
     public function create(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
@@ -83,7 +81,7 @@ class AdminUserController extends AdminBaseController
     {
         $em = $this->getDoctrine()->getManager();
         $books = new Books();
-        $categoryAndBooks = new CategoriesAndBooks();
+        $category = new Category();
         $form = $this->createForm(BooksType::class, $books);
         $form->handleRequest($request);
 
@@ -92,10 +90,7 @@ class AdminUserController extends AdminBaseController
 
             $em->persist($books);
             $em->flush();
-            $categoryAndBooks->setBookId($books);
-            $categoryAndBooks->setCategoryId($form->get('category')->getData());
-            $em->persist($categoryAndBooks);
-            $em->flush();
+
             $this->addFlash('success',"Books Create!");
             return $this->redirectToRoute('admin_user');
         }
@@ -137,27 +132,25 @@ class AdminUserController extends AdminBaseController
      * @param Request $request
      *@return RedirectResponse|Response
      */
-
     public function updateBooks(int $id,Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $books = $this->getDoctrine()->getRepository(Books::class)->find($id);
-        $booksAndCategorType= $this->getDoctrine()->getRepository(CategoriesAndBooks::class)->findBy(array('bookId'=>$id));
+        //$categories = $this->getDoctrine()->getRepository(Category::class)->findBy(array('books' => $books));
         $form = $this->createForm(BooksType::class,$books);
         $form->handleRequest($request);
         if(($form->isSubmitted()) && ($form->isValid()))
         {
             if($form->get('save')->isClicked())
             {
-
                 $em->flush();
 
             }
             if($form->get('delete')->isClicked())
             {
                 $em->remove($books);
-                $em->remove($booksAndCategorType[0]);
+                //$em->remove($categories);
             }
             $em->flush();
             return $this->redirectToRoute('admin_home');

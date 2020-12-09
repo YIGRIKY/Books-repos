@@ -23,7 +23,6 @@ class ManagerActionsController extends ManagerBaseController
     {
         $em = $this->getDoctrine()->getManager();
         $books = new Books();
-        $categoryAndBooks = new CategoriesAndBooks();
         $form = $this->createForm(BooksType::class, $books);
         $form->handleRequest($request);
 
@@ -31,10 +30,6 @@ class ManagerActionsController extends ManagerBaseController
 
 
             $em->persist($books);
-            $em->flush();
-            $categoryAndBooks->setBookId($books);
-            $categoryAndBooks->setCategoryId($form->get('category')->getData());
-            $em->persist($categoryAndBooks);
             $em->flush();
             return $this->redirectToRoute('manager_home');
         }
