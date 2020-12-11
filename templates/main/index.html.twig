@@ -92,7 +92,7 @@
         background: #AA3333;
         outline: none;
         border-radius: 20px;
-        transition: .5s;
+        transition: 1.5s;
     }
 
     input:checked[type="checkbox"] {
@@ -109,7 +109,7 @@
         left: 0;
         background: #fff;
         transform: scale(1.1);
-        transition: .5s;
+        transition: 1.5s;
     }
 
     input:checked[type="checkbox"]:before {
@@ -127,7 +127,7 @@
                         {% for category in categories %}
                         <span class="h4 bg-warning bublick2">{{ category.getCategoryName() }}<input type="checkbox"  name="categoryName" value={{ category.getCategoryName() }}></span>
                         {% endfor %}
-                        <input type="submit"  class="btn btn-outline-success my-2 my-sm-0" name="set" value="Найти">
+                        <input type="submit"  class="btn btn-outline-success my-2 my-sm-0 ml-1 p-3" name="set" value="Найти" style="width: 40%">
                     </div>
                 </form>
                 <div class="list-group">
@@ -142,18 +142,23 @@
                 </div>
 
                 <div class="list-group">
-                    <p class="list-group-item bg-warning">Кол-во отображенных книг:</p>
-                        <h1></h1>
-                    <form class="form-group mt-5" method="post" name="form">
-                            <span class="h4 bg-warning bublick" >2<input type="radio"  name="num" value="2"></span>
-                            <span class="h4 bg-warning bublick">5<input type="radio"   name="num" value="5"></span>
-                            <span class="h4 bg-warning bublick mb-5">12<input type="radio"  name="num" value="12"></span>
-                        <span><input type="submit" class="btn btn-outline-danger my-2 my-sm-0" name="submit" style="margin-left: 190px" value="Подтвердить"></span>
 
-                    </form>
                 </div>
             </div>
             <div class="col-md-8 products" id="books-menu">
+                <form class="form-group mt-5" method="post" name="form">
+                <p class="list-group-item bg-warning display-4">Кол-во отображенных книг:
+                    <select id="selectvalue" class="h4 bg-warning bublick " name="num">
+
+                        <option class="h4 bg-warning bublick align-middle"    name="num" value="2">5</option>
+
+                        <option class="h4 bg-warning bublick"  name="num" value="5">10</option>
+
+                        <option class="h4 bg-warning bublick mb-5" name="num" value="12">12</option>
+                       <input type="submit" class="btn btn-outline-danger my-2 my-sm-0 p-4" name="submit" style="margin-left: 30px" value="Подтвердить">
+                    </select>
+                </p>
+                </form>
                 <ul >
                     {%  for book in  appointments %}
                         <div class="row">
