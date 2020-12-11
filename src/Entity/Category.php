@@ -57,35 +57,7 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection|CategoriesAndBooks[]
-     */
-    public function getCategoriesAndBooks(): Collection
-    {
-        return $this->categoriesAndBooks;
-    }
 
-    public function addCategoriesAndBook(CategoriesAndBooks $categoriesAndBook): self
-    {
-        if (!$this->categoriesAndBooks->contains($categoriesAndBook)) {
-            $this->categoriesAndBooks[] = $categoriesAndBook;
-            $categoriesAndBook->setCategoryid($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategoriesAndBook(CategoriesAndBooks $categoriesAndBook): self
-    {
-        if ($this->categoriesAndBooks->removeElement($categoriesAndBook)) {
-            // set the owning side to null (unless already changed)
-            if ($categoriesAndBook->getCategoryid() === $this) {
-                $categoriesAndBook->setCategoryid(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Books[]
