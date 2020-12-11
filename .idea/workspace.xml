@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f264708-e240-4249-8f5a-5991741bcde5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/70/707ac4cd05088ec17b9d49c2e8fa7a8ab18a7779da36a11587b79e3fe54f1687.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/70/707ac4cd05088ec17b9d49c2e8fa7a8ab18a7779da36a11587b79e3fe54f1687.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/log/prod.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/prod.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +149,7 @@
       <workItem from="1607518552520" duration="312000" />
       <workItem from="1607524933368" duration="3982000" />
       <workItem from="1607685431007" duration="6331000" />
-      <workItem from="1607698459142" duration="1506000" />
+      <workItem from="1607698459142" duration="1630000" />
     </task>
     <servers />
   </component>
