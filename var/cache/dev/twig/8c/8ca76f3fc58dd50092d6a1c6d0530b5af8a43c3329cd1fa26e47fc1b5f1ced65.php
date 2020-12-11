@@ -1671,6 +1671,6 @@ class __TwigTemplate_9deb19f4822e7b461d2f74524d30881a5ebba2e46729206b8f424543341
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "C:\\Users\\egork\\Books-repos\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\Users\\KK\\Books-repos\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
     }
 }

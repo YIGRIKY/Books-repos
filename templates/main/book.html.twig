@@ -5,8 +5,8 @@
             background: #ececec;
         }
         img {
-            height: 600px;
-            max-width: 4000px;
+            height: 300px;
+            max-width: 200px;
             margin-right: 20px;
             padding: 10px;
             background-color: #aacd4e;
@@ -19,7 +19,7 @@
         .product {
             background: #fff none repeat scroll 0 0;
             border: 1px solid #c0c0c0;
-            height: 230px;
+            height: 1200px;
             overflow: visible;
             padding: 5px 5px;
             position: relative;
@@ -69,19 +69,25 @@
             </div>
             <div class="col pl-2">
 
-                <p class="product-title">{{ book.title }}</p>
+                <p class="product-title h3">{{ book.title }}</p>
                 <p class="product-desc" style="text-indent: 20px">
-                    {{ book.description }}</p>
-                <p class="product-title ">{{ book.author.getAuthorName() }}</p>
+                <p class=" h5">Краткое описание</p><br> {{ book.description }}</p>
+                <p class="product-desc" style="text-indent: 20px">
+                <p class=" h5">Краткий сюжет</p><br>{{ book.shortPlot }}</p>
+                <p class="product-title h3">{{ book.author.getAuthorName() }}</p>
                 {% for category in categories %}
                     {% for books in category.getBooks() %}
                         {% if books.id == book.id %}
-                            <span class="product-title ">{{ category.getCategoryName() }}</span>
+                            <p class="product-title h4 mt-1" style="margin-bottom: 10px; margin-left: 250px">Жанр: {{ category.getCategoryName() }}</p><br>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href="{{ path('admin_user_update', {'id': book.id }) }}" class="btn btn-outline-success my-2 my-sm-0" type="submit">Редактировать</a>
+                    {% if  is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('admin_user_update', {'id': book.id }) }}" class="btn btn-outline-success my-2 my-sm-0 ml-4" type="submit">Редактировать</a>
+                    {% else %}
+                        <a href="{{ path('manager_user_update', {'id': book.id }) }}" class="btn btn-outline-success my-2 my-sm-0 ml-4" type="submit">Редактировать</a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>

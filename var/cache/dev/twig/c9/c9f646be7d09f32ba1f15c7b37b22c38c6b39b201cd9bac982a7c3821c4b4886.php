@@ -292,6 +292,6 @@ class __TwigTemplate_7d816cb533e8667d92633aead9f603d3bd13b36e39b9b2710053f9b2b78
     {% block addJs %}{% endblock %}
 {% endblock %}
 </body>
-</html>", "manager/managerbase.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\manager\\managerbase.html.twig");
+</html>", "manager/managerbase.html.twig", "C:\\Users\\KK\\Books-repos\\templates\\manager\\managerbase.html.twig");
     }
 }

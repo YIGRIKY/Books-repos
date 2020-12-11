@@ -25,6 +25,7 @@ return [
     'book_detail' => [['id'], ['_controller' => 'App\\Controller\\Main\\HomeController::booksDetail'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/book']], [], []],
     'manager_books' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createBooks'], [], [['text', '/manager/books']], [], []],
     'manager_category' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::createCategory'], [], [['text', '/manager/category']], [], []],
+    'manager_user_update' => [['id'], ['_controller' => 'App\\Controller\\Manager\\ManagerActionsController::updateBooks'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/manager/books/update']], [], []],
     'manager_home' => [[], ['_controller' => 'App\\Controller\\Manager\\ManagerHomeController::index'], [], [['text', '/manager']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],

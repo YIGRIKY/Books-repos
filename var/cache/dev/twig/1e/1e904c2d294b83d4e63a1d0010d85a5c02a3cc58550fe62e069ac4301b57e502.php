@@ -70,8 +70,8 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
             background: #ececec;
         }
         img {
-            height: 600px;
-            max-width: 4000px;
+            height: 300px;
+            max-width: 200px;
             margin-right: 20px;
             padding: 10px;
             background-color: #aacd4e;
@@ -84,7 +84,7 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
         .product {
             background: #fff none repeat scroll 0 0;
             border: 1px solid #c0c0c0;
-            height: 230px;
+            height: 1200px;
             overflow: visible;
             padding: 5px 5px;
             position: relative;
@@ -137,60 +137,77 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
             </div>
             <div class=\"col pl-2\">
 
-                <p class=\"product-title\">";
+                <p class=\"product-title h3\">";
         // line 72
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 72, $this->source); })()), "title", [], "any", false, false, false, 72), "html", null, true);
         echo "</p>
                 <p class=\"product-desc\" style=\"text-indent: 20px\">
-                    ";
+                <p class=\" h5\">Краткое описание</p><br> ";
         // line 74
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 74, $this->source); })()), "description", [], "any", false, false, false, 74), "html", null, true);
         echo "</p>
-                <p class=\"product-title \">";
-        // line 75
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 75, $this->source); })()), "author", [], "any", false, false, false, 75), "getAuthorName", [], "method", false, false, false, 75), "html", null, true);
+                <p class=\"product-desc\" style=\"text-indent: 20px\">
+                <p class=\" h5\">Краткий сюжет</p><br>";
+        // line 76
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 76, $this->source); })()), "shortPlot", [], "any", false, false, false, 76), "html", null, true);
+        echo "</p>
+                <p class=\"product-title h3\">";
+        // line 77
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 77, $this->source); })()), "author", [], "any", false, false, false, 77), "getAuthorName", [], "method", false, false, false, 77), "html", null, true);
         echo "</p>
                 ";
-        // line 76
+        // line 78
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 76, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 78, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 77
+            // line 79
             echo "                    ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["category"], "getBooks", [], "method", false, false, false, 77));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["category"], "getBooks", [], "method", false, false, false, 79));
             foreach ($context['_seq'] as $context["_key"] => $context["books"]) {
-                // line 78
+                // line 80
                 echo "                        ";
-                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["books"], "id", [], "any", false, false, false, 78), twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 78, $this->source); })()), "id", [], "any", false, false, false, 78)))) {
-                    // line 79
-                    echo "                            <span class=\"product-title \">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 79), "html", null, true);
-                    echo "</span>
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["books"], "id", [], "any", false, false, false, 80), twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 80, $this->source); })()), "id", [], "any", false, false, false, 80)))) {
+                    // line 81
+                    echo "                            <p class=\"product-title h4 mt-1\" style=\"margin-bottom: 10px; margin-left: 250px\">Жанр: ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getCategoryName", [], "method", false, false, false, 81), "html", null, true);
+                    echo "</p><br>
                         ";
                 }
-                // line 81
+                // line 83
                 echo "                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['books'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 82
+            // line 84
             echo "                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 85
         echo "                ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 84
-            echo "                    <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 84, $this->source); })()), "id", [], "any", false, false, false, 84)]), "html", null, true);
-            echo "\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Редактировать</a>
-                ";
+            // line 86
+            echo "                    ";
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 87
+                echo "                        <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 87, $this->source); })()), "id", [], "any", false, false, false, 87)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-success my-2 my-sm-0 ml-4\" type=\"submit\">Редактировать</a>
+                    ";
+            } else {
+                // line 89
+                echo "                        <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("manager_user_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 89, $this->source); })()), "id", [], "any", false, false, false, 89)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-success my-2 my-sm-0 ml-4\" type=\"submit\">Редактировать</a>
+                    ";
+            }
+            // line 91
+            echo "                ";
         }
-        // line 86
+        // line 92
         echo "            </div>
         </div>
     </div>
@@ -216,7 +233,7 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
 
     public function getDebugInfo()
     {
-        return array (  194 => 86,  188 => 84,  185 => 83,  179 => 82,  173 => 81,  167 => 79,  164 => 78,  159 => 77,  155 => 76,  151 => 75,  147 => 74,  142 => 72,  134 => 67,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  211 => 92,  208 => 91,  202 => 89,  196 => 87,  193 => 86,  190 => 85,  184 => 84,  178 => 83,  172 => 81,  169 => 80,  164 => 79,  160 => 78,  156 => 77,  152 => 76,  147 => 74,  142 => 72,  134 => 67,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -228,8 +245,8 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
             background: #ececec;
         }
         img {
-            height: 600px;
-            max-width: 4000px;
+            height: 300px;
+            max-width: 200px;
             margin-right: 20px;
             padding: 10px;
             background-color: #aacd4e;
@@ -242,7 +259,7 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
         .product {
             background: #fff none repeat scroll 0 0;
             border: 1px solid #c0c0c0;
-            height: 230px;
+            height: 1200px;
             overflow: visible;
             padding: 5px 5px;
             position: relative;
@@ -292,24 +309,30 @@ class __TwigTemplate_07b4ecd349da0fba1f126940c328beef3e0807fb669bf8c7b06a931cc04
             </div>
             <div class=\"col pl-2\">
 
-                <p class=\"product-title\">{{ book.title }}</p>
+                <p class=\"product-title h3\">{{ book.title }}</p>
                 <p class=\"product-desc\" style=\"text-indent: 20px\">
-                    {{ book.description }}</p>
-                <p class=\"product-title \">{{ book.author.getAuthorName() }}</p>
+                <p class=\" h5\">Краткое описание</p><br> {{ book.description }}</p>
+                <p class=\"product-desc\" style=\"text-indent: 20px\">
+                <p class=\" h5\">Краткий сюжет</p><br>{{ book.shortPlot }}</p>
+                <p class=\"product-title h3\">{{ book.author.getAuthorName() }}</p>
                 {% for category in categories %}
                     {% for books in category.getBooks() %}
                         {% if books.id == book.id %}
-                            <span class=\"product-title \">{{ category.getCategoryName() }}</span>
+                            <p class=\"product-title h4 mt-1\" style=\"margin-bottom: 10px; margin-left: 250px\">Жанр: {{ category.getCategoryName() }}</p><br>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href=\"{{ path('admin_user_update', {'id': book.id }) }}\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Редактировать</a>
+                    {% if  is_granted('ROLE_ADMIN') %}
+                        <a href=\"{{ path('admin_user_update', {'id': book.id }) }}\" class=\"btn btn-outline-success my-2 my-sm-0 ml-4\" type=\"submit\">Редактировать</a>
+                    {% else %}
+                        <a href=\"{{ path('manager_user_update', {'id': book.id }) }}\" class=\"btn btn-outline-success my-2 my-sm-0 ml-4\" type=\"submit\">Редактировать</a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
-{% endblock %}", "main/book.html.twig", "C:\\Users\\egork\\Books-repos\\templates\\main\\book.html.twig");
+{% endblock %}", "main/book.html.twig", "C:\\Users\\KK\\Books-repos\\templates\\main\\book.html.twig");
     }
 }

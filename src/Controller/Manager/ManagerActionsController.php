@@ -64,4 +64,42 @@ class ManagerActionsController extends ManagerBaseController
         $forRender['form'] = $form->createView();
         return $this->render('manager/form.html.twig', $forRender);
     }
+
+    /**
+     * @Route ("/manager/books/update/{id}", name="manager_user_update")
+     * @param int $id
+     * @param Request $request
+     *@return RedirectResponse|Response
+     */
+    public function updateBooks(int $id,Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $books = $this->getDoctrine()->getRepository(Books::class)->find($id);
+        //$categories = $this->getDoctrine()->getRepository(Category::class)->findBy(array('books' => $books));
+        $form = $this->createForm(BooksType::class,$books);
+        $form->handleRequest($request);
+        if(($form->isSubmitted()) && ($form->isValid()))
+        {
+            if($form->get('save')->isClicked())
+            {
+                $em->flush();
+
+            }
+            if($form->get('delete')->isClicked())
+            {
+                $em->remove($books);
+                //$em->remove($categories);
+            }
+            $em->flush();
+            return $this->redirectToRoute('manager_home');
+        }
+
+        $forRender = parent::renderDefualt();
+        $forRender['title'] = 'Форма update категории';
+        $forRender['form'] = $form->createView();
+
+        return $this->render('manager/form.html.twig', $forRender);
+    }
+
 }

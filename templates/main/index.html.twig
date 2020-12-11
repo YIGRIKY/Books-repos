@@ -1,9 +1,7 @@
 {% extends 'main/base.html.twig' %}
 {% block body %}
 
-    <h1>
-        {{ title }}
-    </h1>
+
 
 <style>
     body{
@@ -24,7 +22,7 @@
     .product {
         background: #fff none repeat scroll 0 0;
         border: 1px solid #c0c0c0;
-        height: 230px;
+        height: 270px;
         overflow: visible;
         padding: 5px 5px;
         position: relative;
@@ -62,17 +60,72 @@
         font-size: 18px;
         font-weight: 500;
     }
+
+    .bublick
+    {
+        border-radius: 30px;
+        padding: 10px;
+        border: 1px solid#222222;
+        width: 10%;
+    }
+
+    .bublick2
+    {
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px;
+        border:  1px solid cornflowerblue;
+        width: 40%;
+    }
+
+
+    input[type="radio"] {
+        margin-left: 10px;
+    }
+    input[type="checkbox"] {
+        margin-left: 10px;
+        position: relative;
+        width: 60px;
+        height: 20px;
+        padding-top: 30px;
+        -webkit-appearance: none;
+        background: #AA3333;
+        outline: none;
+        border-radius: 20px;
+        transition: .5s;
+    }
+
+    input:checked[type="checkbox"] {
+        background: #28c3e6;
+    }
+
+    input[type="checkbox"]:before {
+        width: 20px;
+        height: 20px;
+        content: '';
+        position: absolute;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        transform: scale(1.1);
+        transition: .5s;
+    }
+
+    input:checked[type="checkbox"]:before {
+        background: indigo;
+        left: 40px;
+    }
 </style>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 50px">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" style="background-color: lavender; border: 2px solid#aacd4e; padding: 20px; border-radius: 10px">
                 <form class="form-group" method="post" name="form">
                     <div class="list-group">
                         <p class="list-group-item">Жанры:</p>
                         {% for category in categories %}
-                            <span >{{ category.getCategoryName() }}</span>
-                            <input type="checkbox" class="btn btn-outline-success my-2 my-sm-0" name="categoryName" value={{ category.getCategoryName() }}>
+                        <span class="h4 bg-warning bublick2">{{ category.getCategoryName() }}<input type="checkbox"  name="categoryName" value={{ category.getCategoryName() }}></span>
                         {% endfor %}
                         <input type="submit"  class="btn btn-outline-success my-2 my-sm-0" name="set" value="Найти">
                     </div>
@@ -91,13 +144,12 @@
                 <div class="list-group">
                     <p class="list-group-item bg-warning">Кол-во отображенных книг:</p>
                         <h1></h1>
-                    <form class="form-group" method="post" name="form">
-                        <div class="list-group-item ml-4 bg-white text-white">
-                            <span style="background: black">2</span><input type="radio"  class="btn btn-outline-success my-2 my-sm-0" name="num" value=2>
-                            <span style="background: black">5</span><input type="radio"   class="btn btn-outline-success my-2 my-sm-0" name="num" value=5>
-                            <span style="background: black">12</span><input type="radio"  class="btn btn-outline-success my-2 my-sm-0" name="num" value="12">
-                            <input type="submit" class="btn btn-outline-danger my-2 my-sm-0" name="submit" value="Подтвердить">
-                        </div>
+                    <form class="form-group mt-5" method="post" name="form">
+                            <span class="h4 bg-warning bublick" >2<input type="radio"  name="num" value="2"></span>
+                            <span class="h4 bg-warning bublick">5<input type="radio"   name="num" value="5"></span>
+                            <span class="h4 bg-warning bublick mb-5">12<input type="radio"  name="num" value="12"></span>
+                        <span><input type="submit" class="btn btn-outline-danger my-2 my-sm-0" name="submit" style="margin-left: 190px" value="Подтвердить"></span>
+
                     </form>
                 </div>
             </div>
@@ -123,7 +175,7 @@
                                         {% for category in categories %}
                                             {% for books in category.getBooks() %}
                                                 {% if books.id == book.id %}
-                                                    <span class="product-title ">{{ category.getCategoryName() }}</span>
+                                                    <span class="product-title bg-success">{{ category.getCategoryName() }}</span>
                                                 {% endif %}
                                             {% endfor %}
                                         {% endfor %}

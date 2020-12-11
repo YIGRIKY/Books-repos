@@ -44,6 +44,7 @@ return [
                 .')'
                 .'|/admin/user/books/update/([^/]++)(*:202)'
                 .'|/book/([^/]++)(*:224)'
+                .'|/manager/books/update/([^/]++)(*:262)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -55,8 +56,9 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         202 => [[['_route' => 'admin_user_update', '_controller' => 'App\\Controller\\Admin\\AdminUserController::updateBooks'], ['id'], null, null, false, true, null]],
-        224 => [
-            [['_route' => 'book_detail', '_controller' => 'App\\Controller\\Main\\HomeController::booksDetail'], ['id'], null, null, false, true, null],
+        224 => [[['_route' => 'book_detail', '_controller' => 'App\\Controller\\Main\\HomeController::booksDetail'], ['id'], null, null, false, true, null]],
+        262 => [
+            [['_route' => 'manager_user_update', '_controller' => 'App\\Controller\\Manager\\ManagerActionsController::updateBooks'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
